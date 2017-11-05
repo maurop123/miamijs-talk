@@ -42,8 +42,8 @@
                 - Push notifications
                 - Offline enabled
                 - Looks and feels like an app
-              - let's you write code once, and deploy everywhere
-for prototyping your app ideas. One that gives a great amount of power, and is using some of the most promising technology.
+              - let's you write code once, and deploy everywhere for prototyping your app ideas. One that gives a great amount of power, and is using some of the most promising technology.
+            - ti
           </aside>
         </section>
         <section>
@@ -957,6 +957,11 @@ for prototyping your app ideas. One that gives a great amount of power, and is u
             Ready for Components!
           </h3>
         </section>
+        <section
+          data-background-image="https://media.giphy.com/media/FG85lbM7hHeyQ/giphy.gif"
+          data-background-size="contain"
+        >
+        </section>
         <section>
           <p>Components Quick Intro</p>
           <ul>
@@ -967,81 +972,87 @@ for prototyping your app ideas. One that gives a great amount of power, and is u
         </section>
         <section id="button-component">
           <div class="col2">
-            <div>
+            <div class="fragment" data-fragment-index="1">
               <div>
                 <span class="font-sm">
                   blue-button.html
                 </span>
-                <pre class="font-sm">
+                <pre class="font-smish mt-0">
                   <code data-trim data-noescape>
-                    &lt;button class="blue"&gt;
-                      {{ text }}
-                    &lt;button&gt;
+                   <span class="fragment highlight-current-green" data-fragment-index="9">&lt;button class="blue"&gt;</span>
+                      <span class="fragment highlight-current-green" data-fragment-index="9">{{ text }}</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="9">&lt;button&gt;</span>
                   </code>
                 </pre>
               </div>
-              <div class="fragment">
+              <div class="fragment" data-fragment-index="2">
                 <span class="font-sm">
                   blue-button.js
                 </span>
-                <pre class="font-sm">
+                <pre class="font-smish mt-0">
                   <code data-trim data-noescape>
-                    export default {
-                      <span class="fragment highlight-current-green">data: function() {</span>
-                        return {
-                          text: 'Click me'
-                        }
-                      }
-                    }
+                   <span class="fragment highlight-current-green" data-fragment-index="10">export default {</span>
+                      <span class="fragment highlight-current-green" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="4">data: function() {</span></span>
+                        <span class="fragment highlight-current-green" data-fragment-index="10">return {</span>
+                          <span class="fragment highlight-current-green" data-fragment-index="10">text: 'Click me'</span>
+                        <span class="fragment highlight-current-green" data-fragment-index="10">}</span>
+                      <span class="fragment highlight-current-green" data-fragment-index="10">}</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="10">}</span>
                   </code>
                 </pre>
               </div>
-              <div class="fragment">
+              <div class="fragment" data-fragment-index="3">
                 <span class="font-sm">
                   blue-button.css
                 </span>
-                <pre class="font-sm">
+                <pre class="font-smish mt-0">
                   <code data-trim data-noescape>
-                    .blue {
-                      background-color: #64b5f6;
-                      color: white;
-                    }
+                   <span class="fragment highlight-current-green" data-fragment-index="11">.blue {</span>
+                      <span class="fragment highlight-current-green" data-fragment-index="11">background-color: #64b5f6;</span>
+                      <span class="fragment highlight-current-green" data-fragment-index="11">color: white;</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="11">}</span>
                   </code>
                 </pre>
               </div>
             </div>
             <div>
-              <div class="fragment">
-                <p>Single File Component</p>
-                <span class="font-sm">
-                  blue-button.vue
-                </span>
-                <pre class="font-sm">
-                  <code data-trim data-noescape style="max-height:inherit">
-                    <div class="fragment">
+              <div class="fragment current-visible vertCenter h80" data-fragment-index="5">
+                WTF?! THREE files for one component?!
+              </div>
+              <div class="fragment current-visible vertCenter h80" data-fragment-index="6">
+                <img src="https://media.giphy.com/media/10PcMWwtZSYk2k/giphy.gif" />
+              </div>
+              <div class="fragment current-visible vertCenter h80" data-fragment-index="7">
+                Single File Components
+              </div>
+              <div class="fragment" data-fragment-index="8">
+                <span>blue-button.vue</span>
+                <pre class="font-smish">
+                  <code data-trim data-noescape class="noMaxH">
+                    <div>
                       &lt;template&gt;
-                        &lt;button class="blue"&gt;
-                          {{ text }}
-                        &lt;button&gt;
+                        <span class="fragment" data-fragment-index="9"><span class="fragment highlight-current-green" data-fragment-index="9">&lt;button class="blue"&gt;</span></span>
+                          <span class="fragment" data-fragment-index="9"><span class="fragment highlight-current-green" data-fragment-index="9">{{ text }}</span></span>
+                        <span class="fragment" data-fragment-index="9"><span class="fragment highlight-current-green" data-fragment-index="9">&lt;button&gt;</span></span>
                       &lt;/template&gt;
                     </div>
-                    <div class="fragment">
+                    <div>
                       &lt;script&gt;
-                        export default {
-                          data: function() {
-                            return {
-                              text: 'Click me'
-                            }
-                          }
-                        }
+                        <span class="fragment" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="10">export default {</span></span>
+                          <span class="fragment" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="10">data: function() {</span></span>
+                            <span class="fragment" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="10">return {</span></span>
+                              <span class="fragment" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="10">text: 'Click me'</span></span>
+                            <span class="fragment" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="10">}</span></span>
+                          <span class="fragment" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="10">}</span></span>
+                        <span class="fragment" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="10">}</span></span>
                       &lt;/script&gt;
                     </div>
-                    <div class="fragment">
-                      &lt;style <span class="fragment highlight-current-green">scoped</span>&gt;
-                        .blue {
-                          background-color: #64b5f6;
-                          color: white;
-                        }
+                    <div>
+                      &lt;style <span class="fragment highlight-current-green" data-fragment-index="12">scoped</span>&gt;
+                        <span class="fragment" data-fragment-index="11"><span class="fragment highlight-current-green" data-fragment-index="11">.blue {</span></span>
+                          <span class="fragment" data-fragment-index="11"><span class="fragment highlight-current-green" data-fragment-index="11">background-color: #64b5f6;</span></span>
+                          <span class="fragment" data-fragment-index="11"><span class="fragment highlight-current-green" data-fragment-index="11">color: white;</span></span>
+                        <span class="fragment" data-fragment-index="11"><span class="fragment highlight-current-green" data-fragment-index="11">}</span></span>
                       &lt;/style&gt;
                     </div>
                   </code>
@@ -1049,18 +1060,49 @@ for prototyping your app ideas. One that gives a great amount of power, and is u
               </div>
             </div>
           </div>
+        </section>
+        <section>
+          <div class="col2">
+            <pre class="font-smish">
+              <code data-trim data-noescape style="max-height:none">
+                <span>&lt;script&gt;</span>
+                  <span class="fragment" data-fragment-index="1">import BlueButton from 'blue-button.vue';</span>
+                  <span class="fragment" data-fragment-index="2">new Vue({</span>
+                     <span class="fragment" data-fragment-index="3">el: '#app',</span>
+                     <span class="fragment" data-fragment-index="4">data: {},</span>
+                     <span class="fragment" data-fragment-index="5">components: {</span>
+                       <span class="fragment" data-fragment-index="6">'blue-button': BlueButton</span>
+                     <span class="fragment" data-fragment-index="5">},</span>
+                     <span class="fragment" data-fragment-index="7">template: `</span>
+                       <span class="fragment" data-fragment-index="8">&lt;div&gt;</span>
+                         <span class="fragment" data-fragment-index="9">&lt;h3&gt;Oh so blue...&lt;/h3&gt;</span>
+                         <span class="fragment" data-fragment-index="9">&lt;blue-button&gt;&lt;/blue-button&gt;</span>
+                       <span class="fragment" data-fragment-index="8">&lt;/div&gt;</span>
+                     <span class="fragment" data-fragment-index="7">`</span>
+                  <span class="fragment" data-fragment-index="2">})</span>
+                <span>&lt;/script&gt;</span>
+              </code>
+            </pre>
+            <pre class="fragment font-smish">
+              <code data-trim data-noescape style="max-height:none">
+               &lt;html&gt;
+                  &lt;body&gt;
+                    &lt;div id="app"&gt;&lt;/div&gt;
+                  &lt;body&gt;
+                &lt;html&gt;
+              </code>
+            </pre>
+          </div>
           <div class="fragment xyCenter">
-            <div class="sample">
+            <div class="sample" style="height:75%">
               <v-app>
                 <div id="vuetifyBtn">
+                  <p style="color:black">Oh so blue...</p>
                   <v-btn class="primary">Click me</v-btn>
                 </div>
               </v-app>
             </div>
           </div>
-        </section>
-        <section>
-          
         </section>
         <section
           data-background-image="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif"
@@ -1075,7 +1117,7 @@ for prototyping your app ideas. One that gives a great amount of power, and is u
         color: #f2c92b;
       }
       .vue-green-text {
-        color: #4fc08d;
+        color: red;
       }
       .reveal .slides section .fragment.highlight-red.visible,
       .reveal .slides section .fragment.highlight-red.visible,
@@ -1136,6 +1178,25 @@ for prototyping your app ideas. One that gives a great amount of power, and is u
         color: white;
         font-size: 1em;
         padding: 0 16px;
+      }
+      .mt0 {
+        margin-top: 0;
+      }
+      .mb0 {
+        margin-bottom: 0;
+      }
+      .vertCenter {
+        position: absolute;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .h80 {
+        height: 80%;
+      }
+      .noMaxH {
+        max-height: inherit!important;
       }
     </style>
 
