@@ -779,7 +779,10 @@
           <aside class="notes">
           </aside>
         </section>
-        <section data-background-image="https://media.giphy.com/media/YcMs3OGd89Pxu/giphy.gif">
+        <section
+          data-background-image="https://media.giphy.com/media/YcMs3OGd89Pxu/giphy.gif"
+          data-background-size="contain"
+        >
         </section>
         <section data-transition="none">
           <pre class="font-sm">
@@ -805,16 +808,239 @@
               &lt;/html&gt;
             </code>
           </pre>
-          <div class="fragment xyCenter">
-            <div class="sample">
-              <p>Hello MiamiJS</p>
-            </div>
-          </div>
           <aside class="notes">
             Back to our basic example
+            Let's talk about the template option
           </aside>
         </section>
-        <section data-background-image="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif">
+        <section data-transition="none">
+          <pre class="font-smish">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;
+                    <mark>&lt;h1&gt;
+                      {{ message }}
+                    &lt;/h1&gt;</mark>
+                  &lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                    }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            so instead of including our template markup in the index.html,
+            vue can include it... ...through the template option
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-smish">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;&lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                      <mark>template: `
+                        &lt;h1&gt;
+                          {{ message }}
+                        &lt;/h1&gt;
+                      `</mark>
+                    }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            ...through the template option
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-smish">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;&lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                      template: <mark>`</mark>
+                        &lt;h1&gt;
+                          {{ message }}
+                        &lt;/h1&gt;
+                      <mark>`</mark>
+                    }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            notice i'm using es6 back ticks to make a multiline string
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-smish">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;&lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                      template: `
+                        &lt;h1&gt;
+                          {{ message }}
+                        &lt;/h1&gt;
+                      `
+                    }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            this option is important because now...
+          </aside>
+        </section>
+        <section
+          data-background-image="https://media.giphy.com/media/l0MYzAwMPl8s0jtSg/giphy.gif"
+          data-background-size="contain"
+        >
+          <h3>
+            Ready for Components!
+          </h3>
+        </section>
+        <section>
+          <p>Components Quick Intro</p>
+          <ul>
+            <li class="fragment">Templates</li>
+            <li class="fragment">Reusable</li>
+            <li class="fragment">Shareable</li>
+          </ul>
+        </section>
+        <section id="button-component">
+          <div class="col2">
+            <div>
+              <div>
+                <span class="font-sm">
+                  blue-button.html
+                </span>
+                <pre class="font-sm">
+                  <code data-trim data-noescape>
+                    &lt;button class="blue"&gt;
+                      {{ text }}
+                    &lt;button&gt;
+                  </code>
+                </pre>
+              </div>
+              <div class="fragment">
+                <span class="font-sm">
+                  blue-button.js
+                </span>
+                <pre class="font-sm">
+                  <code data-trim data-noescape>
+                    export default {
+                      <span class="fragment highlight-current-green">data: function() {</span>
+                        return {
+                          text: 'Click me'
+                        }
+                      }
+                    }
+                  </code>
+                </pre>
+              </div>
+              <div class="fragment">
+                <span class="font-sm">
+                  blue-button.css
+                </span>
+                <pre class="font-sm">
+                  <code data-trim data-noescape>
+                    .blue {
+                      background-color: #64b5f6;
+                      color: white;
+                    }
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div>
+              <div class="fragment">
+                <p>Single File Component</p>
+                <span class="font-sm">
+                  blue-button.vue
+                </span>
+                <pre class="font-sm">
+                  <code data-trim data-noescape style="max-height:inherit">
+                    <div class="fragment">
+                      &lt;template&gt;
+                        &lt;button class="blue"&gt;
+                          {{ text }}
+                        &lt;button&gt;
+                      &lt;/template&gt;
+                    </div>
+                    <div class="fragment">
+                      &lt;script&gt;
+                        export default {
+                          data: function() {
+                            return {
+                              text: 'Click me'
+                            }
+                          }
+                        }
+                      &lt;/script&gt;
+                    </div>
+                    <div class="fragment">
+                      &lt;style <span class="fragment highlight-current-green">scoped</span>&gt;
+                        .blue {
+                          background-color: #64b5f6;
+                          color: white;
+                        }
+                      &lt;/style&gt;
+                    </div>
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="fragment xyCenter">
+            <div class="sample">
+              <button class="blue-button">Click me</button>
+            </div>
+          </div>
+        </section>
+        <section>
+        </section>
+        <section
+          data-background-image="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif"
+          data-background-size="contain"
+        >
         </section>
       </div>
     </div>
@@ -826,14 +1052,21 @@
       mark * {
         color: #4fc08d !important;
       }
-      .reveal .slides section .fragment.highlight-green.visible {
+      .reveal .slides section .fragment.highlight-green.visible,
+      .reveal .slides section .fragment.highlight-green.visible,
+      .reveal .slides section .fragment.highlight-current-green.current-fragment,
+      .reveal .slides section .fragment.highlight-current-green.current-fragment * {
         color: #4fc08d;
       }
       .reveal pre {
         box-shadow: none;
       }
-      .reveal pre.font-sm {
+      .reveal pre.font-sm,
+      .reveal span.font-sm {
         font-size: .42em;
+      }
+      .reveal pre.font-smish {
+        font-size: .38em;
       }
       .reveal pre.font-xs {
         font-size: .33em;
@@ -856,6 +1089,16 @@
         justify-content: center;
         align-items: center;
       }
+      .col2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .blue-button {
+        background-color: #64b5f6;
+        color: white;
+        font-size: 1em;
+        padding: 0 16px;
+      }
     </style>
 
     <script src="lib/js/head.min.js"></script>
@@ -874,6 +1117,7 @@
         // - https://github.com/hakimel/reveal.js#configuration
         // - https://github.com/hakimel/reveal.js#dependencies
         Reveal.initialize({
+          history: true,
           dependencies: [
             { src: 'plugin/markdown/marked.js' },
             { src: 'plugin/markdown/markdown.js' },
