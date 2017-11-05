@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="css/theme/black.css">
     <link rel="stylesheet" href="css/theme/override/black.css">
 
+    <!-- Vuetify -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -26,24 +30,40 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <p>
-            Building a
-          </p>
-          <p>
-            Progressive Web App
-          </p>
-          <p>
-            with
-          </p>
-          <p class="fragment grow highlight-green">
-            Vue
-          </p>
-          <p>
-            and
-          </p>
-          <p>
-            Firebase
-          </p>
+          <h2>Building a PWA<br>
+            with <span class="vue-green-text">Vue</span>
+            and <span class="firebase-yellow-text">Firebase</span>
+          </h2>
+          <aside class="notes">
+            - Start crowd out with some questions. Get them thinking about programming
+              - How many of you have heard of The Lean Startup? How many of you have read it? Some of you have some homework, lol.
+            - Today we're going to make a progressive web app.
+              - For those of you that don’t know. A progressive web app is a web app, with mobile capabilities, like:
+                - Push notifications
+                - Offline enabled
+                - Looks and feels like an app
+              - let's you write code once, and deploy everywhere
+for prototyping your app ideas. One that gives a great amount of power, and is using some of the most promising technology.
+          </aside>
+        </section>
+        <section>
+          <h2>
+            A progressive web app...
+          </h2>
+          <ul>
+            <li class="fragment">is a web app with mobile capabilities, like:
+              <ul>
+                <li class="fragment">Push notifications</li>
+                <li class="fragment">Offline enabled</li>
+                <li class="fragment">Looks and feels like an app</li>
+              </ul>
+            </li>
+            <span class="fragment">
+              <li class="fragment highlight-red">
+                let's you write code once, and deploy everywhere
+              </li>
+            </span>
+          </ul>
         </section>
         <section
           data-background-image="img/vue-progressive-framework.png"
@@ -1031,11 +1051,16 @@
           </div>
           <div class="fragment xyCenter">
             <div class="sample">
-              <button class="blue-button">Click me</button>
+              <v-app>
+                <div id="vuetifyBtn">
+                  <v-btn class="primary">Click me</v-btn>
+                </div>
+              </v-app>
             </div>
           </div>
         </section>
         <section>
+          
         </section>
         <section
           data-background-image="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif"
@@ -1046,11 +1071,18 @@
     </div>
 
     <style>
-      mark {
-        background-color: inherit;
+      .firebase-yellow-text {
+        color: #f2c92b;
       }
-      mark * {
-        color: #4fc08d !important;
+      .vue-green-text {
+        color: #4fc08d;
+      }
+      .reveal .slides section .fragment.highlight-red.visible,
+      .reveal .slides section .fragment.highlight-red.visible,
+      .reveal .slides section .fragment.highlight-current-red.current-fragment,
+      .reveal .slides section .fragment.highlight-current-red.current-fragment * {
+        color: #f2c92b;
+        
       }
       .reveal .slides section .fragment.highlight-green.visible,
       .reveal .slides section .fragment.highlight-green.visible,
@@ -1070,6 +1102,12 @@
       }
       .reveal pre.font-xs {
         font-size: .33em;
+      }
+      mark {
+        background-color: inherit;
+      }
+      mark * {
+        color: #4fc08d !important;
       }
       .sample {
         background: white;
@@ -1101,6 +1139,18 @@
       }
     </style>
 
+    <!-- Vue + Vuetify -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+    <script>
+      new Vue({
+        el: '#vuetifyBtn',
+        data: {
+          text: 'Click me',
+        }
+      })
+    </script>
+
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
 
@@ -1126,6 +1176,7 @@
           ]
         });
       }
+
     </script>
   </body>
 </html>
