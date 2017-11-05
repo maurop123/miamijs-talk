@@ -151,6 +151,8 @@
             as a template to render data in our markup.
           </aside>
         </section>
+        <section data-background-image="https://media.giphy.com/media/3ov9jP8AzL4bXqL6GQ/giphy.gif">
+        </section>
         <section data-transition="none">
           <pre class="font-sm">
             <code data-trim data-noescape>
@@ -175,15 +177,580 @@
               &lt;/html&gt;
             </code>
           </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-sm">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;
+                    &lt;h1&gt;
+                      <mark>{{ message + '!' }}</mark>
+                    &lt;/h1&gt;
+                  &lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                    }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
           <div class="fragment xyCenter">
             <div class="sample">
-              <p>Hello MiamiJS</p>
+              <p>Hello MiamiJS!</p>
             </div>
           </div>
           <aside class="notes">
-            and finally let's use Vue for it's most basic use
-            as a template to render data in our markup.
+            We can use regular javascript in the double curly braces
           </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-sm">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;
+                    &lt;h1&gt;
+                      {{ message }}
+                    &lt;/h1&gt;
+                  &lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                    }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            We can use regular javascript in the double curly braces
+            This works fine for simple expressions, but trying to fit
+            complex logic in our markup would be messy,
+            So instead we'll a computed piece of data
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS'
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            let's focus for a minute on just the Vue block
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  <mark>computed: {
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      return steroidsMessage
+                    }
+                  }</mark>
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  <mark>computed: {</mark>
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      return steroidsMessage
+                    }
+                  <mark>}</mark>
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    <mark>messageOnSteroids: function() {</mark>
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      return steroidsMessage
+                    <mark>}</mark>
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      <mark>var chars = this.message.split('')</mark>
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      return steroidsMessage
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      var chars = <mark>this.message</mark>.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      return steroidsMessage
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            notice how we access data on the Vue instance
+            We use "this."
+            Also, this is the common feature of most computed data,
+            they are processing existing data in the Vue app
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      <mark>var steroidsMessage = ''</mark>
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      return steroidsMessage
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      <mark>for (var i=0; i < chars.length; ++i) {</mark>
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      <mark>}</mark>
+
+                      return steroidsMessage
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        <mark>if (i % 2 == 0) {</mark>
+                          steroidsMessage += chars[i].toUpperCase()
+                        <mark>}</mark> else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      return steroidsMessage
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          <mark>steroidsMessage += chars[i].toUpperCase()</mark>
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      return steroidsMessage
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } <mark>else {</mark>
+                          steroidsMessage += chars[i].toLowerCase()
+                        <mark>}</mark>
+                      }
+
+                      return steroidsMessage
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          <mark>steroidsMessage += chars[i].toLowerCase()</mark>
+                        }
+                      }
+
+                      return steroidsMessage
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      <mark>return steroidsMessage</mark>
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;script&gt;
+                new Vue({
+                  el: '#app',
+                  data: {
+                    message: 'Hello MiamiJS',
+                  }
+                  computed: {
+                    messageOnSteroids: function() {
+                      var chars = this.message.split('')
+                      var steroidsMessage = ''
+
+                      for (var i=0; i < chars.length; ++i) {
+                        if (i % 2 == 0) {
+                          steroidsMessage += chars[i].toUpperCase()
+                        } else {
+                          steroidsMessage += chars[i].toLowerCase()
+                        }
+                      }
+
+                      return steroidsMessage
+                    }
+                  }
+                })
+              &lt;/script&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;
+                    &lt;h1&gt;
+                      {{ messageOnSteroids }}
+                    &lt;/h1&gt;
+                  &lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                    },
+                    computed: {
+                      messageOnSteroids: function() {
+                       ...
+                     }
+                   }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-xs">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;
+                    &lt;h1&gt;
+                      <mark>{{ messageOnSteroids }}</mark>
+                    &lt;/h1&gt;
+                  &lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                    },
+                    computed: {
+                      <mark>messageOnSteroids: function() {</mark>
+                        ...
+                      <mark>}</mark>
+                    }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <div class="fragment xyCenter">
+            <div class="sample">
+              <p>HeLlO MiAmIjS</p>
+            </div>
+          </div>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section data-background-image="https://media.giphy.com/media/YcMs3OGd89Pxu/giphy.gif">
         </section>
       </div>
     </div>
@@ -195,9 +762,14 @@
       mark * {
         color: #4fc08d !important;
       }
-      pre.font-sm {
-        font-size: .42em;
+      .reveal pre {
         box-shadow: none;
+      }
+      .reveal pre.font-sm {
+        font-size: .42em;
+      }
+      .reveal pre.font-xs {
+        font-size: .33em;
       }
       .sample {
         background: white;
