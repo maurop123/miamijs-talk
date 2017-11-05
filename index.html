@@ -1,49 +1,248 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>Vue PWA | MiamiJS</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/theme/override/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-transition="none">
+          <pre class="font-sm">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                &lt;/body&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+        </section>
+        <section data-transition="none">
+          <pre class="font-sm">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                &lt;/body&gt;
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+                <mark>&lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;</mark>
+              &lt;/html&gt;
+            </code>
+          </pre>
+        </section>
+        <section data-transition="none">
+          <pre class="font-sm">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                &lt;/body&gt;
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                <mark>&lt;script&gt;
+                  new Vue()
+                &lt;/script&gt;</mark>
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            With this Vue package included, we can make a new Vue object.
+            but without a bit of configuration, it won't do much.
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-sm">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  <mark>&lt;div id="app"&gt;
+                  &lt;/div&gt;</mark>
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    <mark>el: '#app'</mark>
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            now Vue knows where to attach itself in the index.html
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-sm">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;
+                    <mark>&lt;h1&gt;
+                      {{ message }}
+                    &lt;/h1&gt;</mark>
+                  &lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    <mark>data: {
+                      message: 'Hello MiamiJS'
+                    }</mark>
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            and finally let's use Vue for it's most basic use
+            as a template to render data in our markup.
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-sm">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;
+                    &lt;h1&gt;
+                      {{ message }}
+                    &lt;/h1&gt;
+                  &lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                    }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <div class="fragment xyCenter">
+            <div class="sample">
+              <p>Hello MiamiJS</p>
+            </div>
+          </div>
+          <aside class="notes">
+            and finally let's use Vue for it's most basic use
+            as a template to render data in our markup.
+          </aside>
+        </section>
+        <section data-transition="none">
+          <pre class="font-sm">
+            <code data-trim data-noescape>
+              &lt;html&gt;
+                &lt;body&gt;
+                  &lt;div id="app"&gt;
+                    &lt;h1&gt;
+                      {{ message }}
+                    &lt;/h1&gt;
+                  &lt;/div&gt;
+                &lt;/body&gt;
+
+                &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;
+                &lt;script&gt;
+                  new Vue({
+                    el: '#app',
+                    data: {
+                      message: 'Hello MiamiJS'
+                    }
+                  })
+                &lt;/script&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <div class="fragment xyCenter">
+            <div class="sample">
+              <p>Hello MiamiJS</p>
+            </div>
+          </div>
+          <aside class="notes">
+            and finally let's use Vue for it's most basic use
+            as a template to render data in our markup.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <style>
+      mark {
+        background-color: inherit;
+      }
+      mark * {
+        color: #4fc08d !important;
+      }
+      pre.font-sm {
+        font-size: .42em;
+        box-shadow: none;
+      }
+      .sample {
+        background: white;
+        color: black;
+        width: 80%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .xyCenter {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", initReveal, false);
+
+      function initReveal() {
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+          dependencies: [
+            { src: 'plugin/markdown/marked.js' },
+            { src: 'plugin/markdown/markdown.js' },
+            { src: 'plugin/notes/notes.js', async: true },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+          ]
+        });
+      }
+    </script>
+  </body>
 </html>
