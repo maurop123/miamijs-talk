@@ -805,7 +805,7 @@
         >
         </section>
         <section data-transition="none">
-          <pre class="font-sm">
+          <pre class="font-smish">
             <code data-trim data-noescape>
               &lt;html&gt;
                 &lt;body&gt;
@@ -876,12 +876,12 @@
                     el: '#app',
                     data: {
                       message: 'Hello MiamiJS'
-                      <mark>template: `
-                        &lt;h1&gt;
-                          {{ message }}
-                        &lt;/h1&gt;
-                      `</mark>
-                    }
+                    },
+                    <mark>template: `
+                      &lt;h1&gt;
+                        {{ message }}
+                      &lt;/h1&gt;
+                    `</mark>
                   })
                 &lt;/script&gt;
               &lt;/html&gt;
@@ -905,12 +905,12 @@
                     el: '#app',
                     data: {
                       message: 'Hello MiamiJS'
-                      template: <mark>`</mark>
-                        &lt;h1&gt;
-                          {{ message }}
-                        &lt;/h1&gt;
-                      <mark>`</mark>
-                    }
+                    },
+                    template: <mark>`</mark>
+                      &lt;h1&gt;
+                        {{ message }}
+                      &lt;/h1&gt;
+                    <mark>`</mark>
                   })
                 &lt;/script&gt;
               &lt;/html&gt;
@@ -934,12 +934,12 @@
                     el: '#app',
                     data: {
                       message: 'Hello MiamiJS'
-                      template: `
-                        &lt;h1&gt;
-                          {{ message }}
-                        &lt;/h1&gt;
-                      `
-                    }
+                    },
+                    template: `
+                      &lt;h1&gt;
+                        {{ message }}
+                      &lt;/h1&gt;
+                    `
                   })
                 &lt;/script&gt;
               &lt;/html&gt;
@@ -970,9 +970,9 @@
             <li class="fragment">Shareable</li>
           </ul>
         </section>
-        <section id="button-component">
+        <section id="button-component" data-transition="none">
           <div class="col2">
-            <div class="fragment" data-fragment-index="1">
+            <div id="three-files" class="fragment" data-fragment-index="1">
               <div>
                 <span class="font-sm">
                   blue-button.html
@@ -992,7 +992,7 @@
                 <pre class="font-smish mt-0">
                   <code data-trim data-noescape>
                    <span class="fragment highlight-current-green" data-fragment-index="10">export default {</span>
-                      <span class="fragment highlight-current-green" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="4">data: function() {</span></span>
+                      <span class="fragment highlight-current-green" data-fragment-index="10">data: function() {</span>
                         <span class="fragment highlight-current-green" data-fragment-index="10">return {</span>
                           <span class="fragment highlight-current-green" data-fragment-index="10">text: 'Click me'</span>
                         <span class="fragment highlight-current-green" data-fragment-index="10">}</span>
@@ -1027,7 +1027,7 @@
               </div>
               <div class="fragment" data-fragment-index="8">
                 <span>blue-button.vue</span>
-                <pre class="font-smish">
+                <pre class="font-xs">
                   <code data-trim data-noescape class="noMaxH">
                     <div>
                       &lt;template&gt;
@@ -1061,37 +1061,73 @@
             </div>
           </div>
         </section>
-        <section>
+        <section id="button-component-2" data-transition="none">
           <div class="col2">
-            <pre class="font-smish">
-              <code data-trim data-noescape style="max-height:none">
-                <span>&lt;script&gt;</span>
-                  <span class="fragment" data-fragment-index="1">import BlueButton from 'blue-button.vue';</span>
-                  <span class="fragment" data-fragment-index="2">new Vue({</span>
-                     <span class="fragment" data-fragment-index="3">el: '#app',</span>
-                     <span class="fragment" data-fragment-index="4">data: {},</span>
-                     <span class="fragment" data-fragment-index="5">components: {</span>
-                       <span class="fragment" data-fragment-index="6">'blue-button': BlueButton</span>
-                     <span class="fragment" data-fragment-index="5">},</span>
-                     <span class="fragment" data-fragment-index="7">template: `</span>
-                       <span class="fragment" data-fragment-index="8">&lt;div&gt;</span>
-                         <span class="fragment" data-fragment-index="9">&lt;h3&gt;Oh so blue...&lt;/h3&gt;</span>
-                         <span class="fragment" data-fragment-index="9">&lt;blue-button&gt;&lt;/blue-button&gt;</span>
-                       <span class="fragment" data-fragment-index="8">&lt;/div&gt;</span>
-                     <span class="fragment" data-fragment-index="7">`</span>
-                  <span class="fragment" data-fragment-index="2">})</span>
-                <span>&lt;/script&gt;</span>
-              </code>
-            </pre>
-            <pre class="fragment font-smish">
-              <code data-trim data-noescape style="max-height:none">
-               &lt;html&gt;
-                  &lt;body&gt;
-                    &lt;div id="app"&gt;&lt;/div&gt;
-                  &lt;body&gt;
-                &lt;html&gt;
-              </code>
-            </pre>
+            <div class="fragment" data-fragment-index="1">
+              <span>index.html</span>
+              <pre class="font-xs">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;html&gt;
+                    &lt;body&gt;
+                      &lt;div id="app"&gt;&lt;/div&gt;
+                    &lt;/body&gt;
+
+                    &lt;script src="https://unpkg.com/vue"&gt;
+                    &lt;/script&gt;
+                    &lt;script&gt;
+                      <span class="fragment" data-fragment-index="2">new Vue({</span>
+                         <span class="fragment" data-fragment-index="3">el: '#app',</span>
+                         <span class="fragment" data-fragment-index="4">data: {},</span>
+                         <span class="fragment" data-fragment-index="5">components: {</span>
+                           <span class="fragment" data-fragment-index="6">'blue-button': BlueButton</span>
+                         <span class="fragment" data-fragment-index="5">},</span>
+                         <span class="fragment" data-fragment-index="7">template: `</span>
+                           <span class="fragment" data-fragment-index="8">&lt;div&gt;</span>
+                             <span class="fragment" data-fragment-index="9">&lt;h3&gt;Oh so blue...&lt;/h3&gt;</span>
+                             <span class="fragment" data-fragment-index="9">&lt;blue-button&gt;&lt;/blue-button&gt;</span>
+                           <span class="fragment" data-fragment-index="8">&lt;/div&gt;</span>
+                         <span class="fragment" data-fragment-index="7">`</span>
+                      <span class="fragment" data-fragment-index="2">})</span>
+                    &lt;/script&gt;
+                  &lt;/html&gt;
+                </code>
+              </pre>
+            </div>
+            <div id="button.vue">
+              <div>
+                <span>blue-button.vue</span>
+                <pre class="font-xs">
+                  <code data-trim data-noescape class="noMaxH">
+                    <div>
+                      &lt;template&gt;
+                        &lt;button class="blue"&gt;
+                          {{ text }}
+                        &lt;button&gt;
+                      &lt;/template&gt;
+                    </div>
+                    <div>
+                      &lt;script&gt;
+                        export default {
+                          data: function() {
+                            return {
+                              text: 'Click me'
+                            }
+                          }
+                        }
+                      &lt;/script&gt;
+                    </div>
+                    <div>
+                      &lt;style scoped&gt;
+                        .blue {
+                          background-color: #64b5f6;
+                          color: white;
+                        }
+                      &lt;/style&gt;
+                    </div>
+                  </code>
+                </pre>
+              </div>
+            </div>
           </div>
           <div class="fragment xyCenter">
             <div class="sample" style="height:75%">
@@ -1117,7 +1153,7 @@
         color: #f2c92b;
       }
       .vue-green-text {
-        color: red;
+        color: #4fc08d;
       }
       .reveal .slides section .fragment.highlight-red.visible,
       .reveal .slides section .fragment.highlight-red.visible,
