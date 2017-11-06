@@ -1814,37 +1814,33 @@
                 <span>our-button.vue</span>
                 <pre class="font-xs">
                   <code data-trim data-noescape class="noMaxH">
+                   &lt;template&gt;
+                      &lt;button v-bind:class="color"&gt;
+                        {{ text }}
+                      &lt;button&gt;
+                    &lt;/template&gt;
                     <div>
-                      &lt;template&gt;
-                        &lt;button v-bind:class="color"&gt;
-                          {{ text }}
-                        &lt;button&gt;
-                      &lt;/template&gt;
-                    </div>
-                    <div>
-                      &lt;script&gt;
-                        export default {
-                          props: ['color'],
-                          data: function() {
-                            return {
-                              text: 'Click me'
-                            }
+                    &lt;script&gt;
+                      export default {
+                        props: ['color'],
+                        data: function() {
+                          return {
+                            text: 'Click me'
                           }
                         }
-                      &lt;/script&gt;
+                      }
+                    &lt;/script&gt;
                     </div>
-                    <div>
-                      &lt;style scoped&gt;
-                        .red {
-                          background-color: #e44038;
-                          color: white;
-                        }
-                        .blue {
-                          background-color: #64b5f6;
-                          color: white;
-                        }
-                      &lt;/style&gt;
-                    </div>
+                    &lt;style scoped&gt;
+                      .red {
+                        background-color: #e44038;
+                        color: white;
+                      }
+                      .blue {
+                        background-color: #64b5f6;
+                        color: white;
+                      }
+                    &lt;/style&gt;
                   </code>
                 </pre>
               </div>
@@ -1894,40 +1890,359 @@
                 <span>our-button.vue</span>
                 <pre class="font-xs">
                   <code data-trim data-noescape class="noMaxH">
+                   &lt;template&gt;
+                      &lt;button v-bind:class="color"&gt;
+                        <mark>&lt;slot&gt;&lt;/slot&gt;</mark>
+                      &lt;button&gt;
+                    &lt;/template&gt;
                     <div>
-                      &lt;template&gt;
-                        &lt;button v-bind:class="color"&gt;
-                          <mark>&lt;slot&gt;&lt;/slot&gt;</mark>
-                        &lt;button&gt;
-                      &lt;/template&gt;
-                    </div>
-                    <div>
-                      &lt;script&gt;
-                        export default {
-                          props: ['color'],
-                          data: function() {
-                            return {
-                              <mark><s>text: 'Click me'</s></mark>
-                            }
+                    &lt;script&gt;
+                      export default {
+                        props: ['color'],
+                        data: function() {
+                          return {
+                            <mark><s>text: 'Click me'</s></mark>
                           }
                         }
-                      &lt;/script&gt;
+                      }
+                    &lt;/script&gt;
                     </div>
-                    <div>
-                      &lt;style scoped&gt;
-                        .red {
-                          background-color: #e44038;
-                          color: white;
-                        }
-                        .blue {
-                          background-color: #64b5f6;
-                          color: white;
-                        }
-                      &lt;/style&gt;
-                    </div>
+                    &lt;style scoped&gt;
+                      .red {
+                        background-color: #e44038;
+                        color: white;
+                      }
+                      .blue {
+                        background-color: #64b5f6;
+                        color: white;
+                      }
+                    &lt;/style&gt;
                   </code>
                 </pre>
               </div>
+            </div>
+          </div>
+        </section>
+        <section id="buttom-component-methods" data-transition="none">
+          <div class="col2">
+            <div>
+              <span>index.html</span>
+              <pre class="font-xs">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;html&gt;
+                    &lt;body&gt;
+                      &lt;div id="app"&gt;&lt;/div&gt;
+                    &lt;/body&gt;
+
+                    &lt;script src="https://unpkg.com/vue"&gt;
+                    &lt;/script&gt;
+                    &lt;script&gt;
+                      import OurButton from 'our-button.vue'
+
+                      new Vue({
+                         el: '#app',
+                         data: {
+                           color: 'red'
+                         },
+                         components: {
+                           'our-button': OurButton
+                         },
+                         template: `
+                           &lt;div&gt;
+                             &lt;h3&gt;Oh so {{ color }}...&lt;/h3&gt;
+                             &lt;our-button v-bind:color="color"&gt;
+                               Click me
+                             &lt;/our-button&gt;
+                           &lt;/div&gt;
+                         `
+                      })
+                    &lt;/script&gt;
+                  &lt;/html&gt;
+                </code>
+              </pre>
+            </div>
+            <div id="button.vue">
+              <div>
+                <span>our-button.vue</span>
+                <pre class="font-xs">
+                  <code data-trim data-noescape class="noMaxH">
+                   &lt;template&gt;
+                      &lt;button v-bind:class="color"&gt;
+                        &lt;slot&gt;&lt;/slot&gt;
+                      &lt;button&gt;
+                    &lt;/template&gt;
+                    <div>
+                    &lt;script&gt;
+                      export default {
+                        props: ['color'],
+                        data: function() {
+                          return {}
+                        }
+                      }
+                    &lt;/script&gt;
+                    </div>
+                    &lt;style scoped&gt;
+                      .red {
+                        background-color: #e44038;
+                        color: white;
+                      }
+                      .blue {
+                        background-color: #64b5f6;
+                        color: white;
+                      }
+                    &lt;/style&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="buttom-component-methods-2" data-transition="none">
+          <div class="col2">
+            <div>
+              <span>index.html</span>
+              <pre class="font-xs">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;html&gt;
+                    &lt;body&gt;
+                      &lt;div id="app"&gt;&lt;/div&gt;
+                    &lt;/body&gt;
+
+                    &lt;script src="https://unpkg.com/vue"&gt;
+                    &lt;/script&gt;
+                    &lt;script&gt;
+                      import OurButton from 'our-button.vue'
+
+                      new Vue({
+                         el: '#app',
+                         data: {
+                           color: 'red'
+                         },
+                         components: {
+                           'our-button': OurButton
+                         },
+                         template: `
+                           &lt;div&gt;
+                             &lt;h3&gt;Oh so {{ color }}...&lt;/h3&gt;
+                             &lt;our-button v-bind:color="color"&gt;
+                               Click me
+                             &lt;/our-button&gt;
+                           &lt;/div&gt;
+                         `
+                      })
+                    &lt;/script&gt;
+                  &lt;/html&gt;
+                </code>
+              </pre>
+            </div>
+            <div id="button.vue">
+              <div>
+                <span>our-button.vue</span>
+                <pre class="font-xxs">
+                  <code data-trim data-noescape class="noMaxH">
+                   &lt;template&gt;
+                      &lt;button v-bind:class="color"&gt;
+                        &lt;slot&gt;&lt;/slot&gt;
+                      &lt;button&gt;
+                    &lt;/template&gt;
+                    <div>
+                    &lt;script&gt;
+                      export default {
+                        props: ['color'],
+                        data: function() {
+                          return {}
+                        }
+                      }
+                    &lt;/script&gt;
+                    </div>
+                    &lt;style scoped&gt;
+                      .red {
+                        background-color: #e44038;
+                        color: white;
+                      }
+                      .blue {
+                        background-color: #64b5f6;
+                        color: white;
+                      }
+                    &lt;/style&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="buttom-component-methods-3" data-transition="none">
+          <div class="col2">
+            <div>
+              <span>index.html</span>
+              <pre class="font-xs">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;html&gt;
+                    &lt;body&gt;
+                      &lt;div id="app"&gt;&lt;/div&gt;
+                    &lt;/body&gt;
+
+                    &lt;script src="https://unpkg.com/vue"&gt;
+                    &lt;/script&gt;
+                    &lt;script&gt;
+                      import OurButton from 'our-button.vue'
+
+                      new Vue({
+                         el: '#app',
+                         data: {
+                           color: 'red'
+                         },
+                         components: {
+                           'our-button': OurButton
+                         },
+                         template: `
+                           &lt;div&gt;
+                             &lt;h3&gt;Oh so {{ color }}...&lt;/h3&gt;
+                             &lt;our-button v-bind:color="color"&gt;
+                               Click me
+                             &lt;/our-button&gt;
+                           &lt;/div&gt;
+                         `
+                      })
+                    &lt;/script&gt;
+                  &lt;/html&gt;
+                </code>
+              </pre>
+            </div>
+            <div id="button.vue">
+              <div>
+                <span>our-button.vue</span>
+                <pre class="font-xxs">
+                  <code data-trim data-noescape class="noMaxH">
+                   &lt;template&gt;
+                      &lt;button v-bind:class="color"
+                              <mark>v-on:click="clickMethod"</mark>&gt;
+                        &lt;slot&gt;&lt;/slot&gt;
+                      &lt;button&gt;
+                    &lt;/template&gt;
+                    <div>
+                    &lt;script&gt;
+                      export default {
+                        props: ['color'],
+                        data: function() {
+                          return {}
+                        },
+                        methods: {
+                          <mark>clickMethod: function() {
+                          }</mark>
+                        }
+                      }
+                    &lt;/script&gt;
+                    </div>
+                    &lt;style scoped&gt;
+                      .red {
+                        background-color: #e44038;
+                        color: white;
+                      }
+                      .blue {
+                        background-color: #64b5f6;
+                        color: white;
+                      }
+                    &lt;/style&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="buttom-component-methods-4" data-transition="none">
+          <div class="col2">
+            <div>
+              <span>index.html</span>
+              <pre class="font-xs">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;html&gt;
+                    &lt;body&gt;
+                      &lt;div id="app"&gt;&lt;/div&gt;
+                    &lt;/body&gt;
+
+                    &lt;script src="https://unpkg.com/vue"&gt;
+                    &lt;/script&gt;
+                    &lt;script&gt;
+                      import OurButton from 'our-button.vue'
+
+                      new Vue({
+                         el: '#app',
+                         data: {
+                           color: 'red'
+                         },
+                         components: {
+                           'our-button': OurButton
+                         },
+                         template: `
+                           &lt;div&gt;
+                             &lt;h3&gt;Oh so {{ color }}...&lt;/h3&gt;
+                             &lt;our-button v-bind:color="color"&gt;
+                               Click me
+                             &lt;/our-button&gt;
+                           &lt;/div&gt;
+                         `
+                      })
+                    &lt;/script&gt;
+                  &lt;/html&gt;
+                </code>
+              </pre>
+            </div>
+            <div id="button.vue">
+              <div>
+                <span>our-button.vue</span>
+                <pre class="font-xxs">
+                  <code data-trim data-noescape class="noMaxH">
+                   &lt;template&gt;
+                      <span class="fragment highlight-current-green" data-fragment-index="1">&lt;img <span class="fragment highlight-current-green" data-fragment-index="4">v-if="toggleGiphy"</span> src="http://gph.is/1LjlEFE" /&gt;</span>
+                      &lt;button v-bind:class="color"
+                              v-on:click="clickMethod"&gt;
+                        &lt;slot&gt;&lt;/slot&gt;
+                      &lt;button&gt;
+                    &lt;/template&gt;
+                    <div>
+                    &lt;script&gt;
+                      export default {
+                        props: ['color'],
+                        data: function() {
+                          return {
+                            <span class="fragment highlight-current-green" data-fragment-index="2">this.toggleGiphy</span>
+                          }
+                        },
+                        methods: {
+                          clickMethod: function() {
+                            <span class="fragment highlight-current-green" data-fragment-index="3">this.toggleGiphy = !this.toggleGiphy</span>
+                          }
+                        }
+                      }
+                    &lt;/script&gt;
+                    </div>
+                    &lt;style scoped&gt;
+                      .red {
+                        background-color: #e44038;
+                        color: white;
+                      }
+                      .blue {
+                        background-color: #64b5f6;
+                        color: white;
+                      }
+                    &lt;/style&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="fragment current-visible xyCenter" data-fragment-index="5">
+            <div class="sample" style="min-height:420px">
+              <v-app>
+                <div id="vuetifyBtn3">
+                  <p style="color:black">Oh so {{ color }}...</p>
+                  <div>
+                    <img v-if="toggleGiphy" height="200px" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" />
+                  </div>
+                  <v-btn color="error" @click="clickMethod">Click me</v-btn>
+                </div>
+              </v-app>
             </div>
           </div>
         </section>
@@ -1971,6 +2286,9 @@
       }
       .reveal pre.font-xs {
         font-size: .33em;
+      }
+      .reveal pre.font-xxs {
+        font-size: .28em;
       }
       mark {
         background-color: inherit;
@@ -2042,6 +2360,19 @@
         data: {
           text: 'Click me',
           color: 'red',
+        }
+      })
+      new Vue({
+        el: '#vuetifyBtn3',
+        data: {
+          text: 'Click me',
+          color: 'red',
+          toggleGiphy: false
+        },
+        methods: {
+          clickMethod: function() {
+            this.toggleGiphy = !this.toggleGiphy
+          }
         }
       })
     </script>
