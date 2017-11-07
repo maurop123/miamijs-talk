@@ -25,6 +25,102 @@
       link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
+
+    <!-- My Styles -->
+    <style>
+      .firebase-yellow-text {
+        color: #f2c92b;
+      }
+      .vue-green-text {
+        color: #4fc08d;
+      }
+      .reveal .slides section .fragment.highlight-red.visible,
+      .reveal .slides section .fragment.highlight-red.visible,
+      .reveal .slides section .fragment.highlight-current-red.current-fragment,
+      .reveal .slides section .fragment.highlight-current-red.current-fragment * {
+        color: #f2c92b;
+        
+      }
+      .reveal .slides section .fragment.highlight-green.visible,
+      .reveal .slides section .fragment.highlight-green.visible,
+      .reveal .slides section .fragment.highlight-current-green.current-fragment,
+      .reveal .slides section .fragment.highlight-current-green.current-fragment * {
+        color: #4fc08d;
+      }
+      .reveal pre {
+        box-shadow: none;
+      }
+      .reveal pre.font-sm,
+      .reveal span.font-sm {
+        font-size: .42em;
+      }
+      .reveal pre.font-smish {
+        font-size: .38em;
+      }
+      .reveal pre.font-xs {
+        font-size: .33em;
+      }
+      .reveal pre.font-xxs {
+        font-size: .28em;
+      }
+      mark {
+        background-color: inherit;
+      }
+      mark * {
+        color: #4fc08d !important;
+      }
+      .sample {
+        background: white;
+        color: black;
+        width: 80%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .xyCenter {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .col2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .blue-button {
+        background-color: #64b5f6;
+        color: white;
+        font-size: 1em;
+        padding: 0 16px;
+      }
+      .mt0 {
+        margin-top: 0;
+      }
+      .mb0 {
+        margin-bottom: 0;
+      }
+      .vertCenter {
+        position: absolute;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .h80 {
+        height: 80%;
+      }
+      .noMaxH {
+        max-height: inherit!important;
+      }
+    </style>
+
+    <!-- Vue + Vuetify -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
   </head>
   <body>
     <div class="reveal">
@@ -1683,7 +1779,7 @@
             </div>
           </section>
         </section>
-        <section id="buttom-component-props-2" data-transition="none">
+        <section id="button-component-props-2" data-transition="none">
           <div class="col2">
             <div>
               <span>index.html</span>
@@ -1772,7 +1868,7 @@
             </div>
           </div>
         </section>
-        <section id="buttom-component-slot" data-transition="none">
+        <section id="button-component-slot" data-transition="none">
           <div class="col2">
             <div>
               <span>index.html</span>
@@ -1847,7 +1943,7 @@
             </div>
           </div>
         </section>
-        <section id="buttom-component-slot-2" data-transition="none">
+        <section id="button-component-slot-2" data-transition="none">
           <div class="col2">
             <div>
               <span>index.html</span>
@@ -1923,7 +2019,7 @@
             </div>
           </div>
         </section>
-        <section id="buttom-component-methods" data-transition="none">
+        <section id="button-component-methods" data-transition="none">
           <div class="col2">
             <div>
               <span>index.html</span>
@@ -1997,7 +2093,7 @@
             </div>
           </div>
         </section>
-        <section id="buttom-component-methods-2" data-transition="none">
+        <section id="button-component-methods-2" data-transition="none">
           <div class="col2">
             <div>
               <span>index.html</span>
@@ -2071,7 +2167,7 @@
             </div>
           </div>
         </section>
-        <section id="buttom-component-methods-3" data-transition="none">
+        <section id="button-component-methods-3" data-transition="none">
           <div class="col2">
             <div>
               <span>index.html</span>
@@ -2150,7 +2246,7 @@
             </div>
           </div>
         </section>
-        <section id="buttom-component-methods-4" data-transition="none">
+        <section id="button-component-methods-4" data-transition="none">
           <div class="col2">
             <div>
               <span>index.html</span>
@@ -2263,108 +2359,60 @@
         <!--   data&#45;background&#45;size="contain" -->
         <!-- > -->
         <!-- </section> -->
-        <!-- <section -->
-        <!--   data&#45;background&#45;image="https://media.giphy.com/media/lD76yTC5zxZPG/giphy.gif" -->
-        <!--   data&#45;background&#45;size="contain" -->
-        <!-- > -->
-        <!-- </section> -->
+        <section id="make-chat-app">
+          <div class="col2">
+            <div>
+              <span>index.html</span>
+              <pre class="font-xs">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;html&gt;
+                    &lt;body&gt;
+                      &lt;div id="app"&gt;&lt;/div&gt;
+                    &lt;/body&gt;
+
+                    &lt;script src="https://unpkg.com/vue"&gt;
+                    &lt;/script&gt;
+                    &lt;script&gt;
+                      import OurButton from 'our-button.vue'
+
+                      new Vue({
+                         el: '#app',
+                         data: {
+                           color: 'red'
+                         },
+                         components: {
+                           'our-button': OurButton
+                         },
+                         template: `
+                           &lt;div&gt;
+                             &lt;h3&gt;Oh so {{ color }}...&lt;/h3&gt;
+                             &lt;our-button v-bind:color="color"&gt;
+                               Click me
+                             &lt;/our-button&gt;
+                           &lt;/div&gt;
+                         `
+                      })
+                    &lt;/script&gt;
+                  &lt;/html&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="chat-app/v-app.html"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          data-background-image="https://media.giphy.com/media/lD76yTC5zxZPG/giphy.gif"
+          data-background-size="contain"
+        >
+        </section>
       </div>
     </div>
 
-    <style>
-      .firebase-yellow-text {
-        color: #f2c92b;
-      }
-      .vue-green-text {
-        color: #4fc08d;
-      }
-      .reveal .slides section .fragment.highlight-red.visible,
-      .reveal .slides section .fragment.highlight-red.visible,
-      .reveal .slides section .fragment.highlight-current-red.current-fragment,
-      .reveal .slides section .fragment.highlight-current-red.current-fragment * {
-        color: #f2c92b;
-        
-      }
-      .reveal .slides section .fragment.highlight-green.visible,
-      .reveal .slides section .fragment.highlight-green.visible,
-      .reveal .slides section .fragment.highlight-current-green.current-fragment,
-      .reveal .slides section .fragment.highlight-current-green.current-fragment * {
-        color: #4fc08d;
-      }
-      .reveal pre {
-        box-shadow: none;
-      }
-      .reveal pre.font-sm,
-      .reveal span.font-sm {
-        font-size: .42em;
-      }
-      .reveal pre.font-smish {
-        font-size: .38em;
-      }
-      .reveal pre.font-xs {
-        font-size: .33em;
-      }
-      .reveal pre.font-xxs {
-        font-size: .28em;
-      }
-      mark {
-        background-color: inherit;
-      }
-      mark * {
-        color: #4fc08d !important;
-      }
-      .sample {
-        background: white;
-        color: black;
-        width: 80%;
-        height: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .xyCenter {
-        position: absolute;
-        top: 100px;
-        width: 100%;
-        height: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .col2 {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .blue-button {
-        background-color: #64b5f6;
-        color: white;
-        font-size: 1em;
-        padding: 0 16px;
-      }
-      .mt0 {
-        margin-top: 0;
-      }
-      .mb0 {
-        margin-bottom: 0;
-      }
-      .vertCenter {
-        position: absolute;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .h80 {
-        height: 80%;
-      }
-      .noMaxH {
-        max-height: inherit!important;
-      }
-    </style>
-
-    <!-- Vue + Vuetify -->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+    <!-- Vues -->
     <script>
       new Vue({
         el: '#vuetifyBtn',
