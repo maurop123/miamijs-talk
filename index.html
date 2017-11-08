@@ -211,13 +211,22 @@
             and those are the minimum viable platforms your app needs to be on.
           </aside>
         </section>
-        <section id="pwa-support">
+        <section id="pwa-support"
+          data-background-image="img/apple-sux.png"
+          data-background-size="contain"
+          data-background-color="white">
         </section>
-        <section id="pwa-backing">
+        <section id="pwa-support-2"
+          data-background-image="img/apple-sux-2.png"
+          data-background-size="contain"
+          data-background-color="white">
         </section>
-        <section id="disclaimer">
+        <section id="pwa-backing"
+          data-background-image="img/t-lite.png"
+          data-background-size="contain"
+          data-background-color="white">
         </section>
-        <section id="intro-2">
+        <section id="intro-disclaimer">
           <h2>Building a PWA<br>
             with <span class="fragment highlight-green" data-fragment-index="1">Vue</span> and Firebase
           </h2>
@@ -983,11 +992,6 @@
           <aside class="notes">
           </aside>
         </section>
-        <section
-          data-background-image="https://media.giphy.com/media/YcMs3OGd89Pxu/giphy.gif"
-          data-background-size="contain"
-        >
-        </section>
         <section data-transition="none">
           <pre class="font-smish">
             <code data-trim data-noescape>
@@ -1134,6 +1138,11 @@
           </aside>
         </section>
         <section
+          data-background-image="https://media.giphy.com/media/YcMs3OGd89Pxu/giphy.gif"
+          data-background-size="contain"
+        >
+        </section>
+        <section
           data-background-image="https://media.giphy.com/media/l0MYzAwMPl8s0jtSg/giphy.gif"
           data-background-size="contain"
         >
@@ -1141,15 +1150,10 @@
             Ready for Components!
           </h3>
         </section>
-        <section
-          data-background-image="https://media.giphy.com/media/FG85lbM7hHeyQ/giphy.gif"
-          data-background-size="contain"
-        >
-        </section>
         <section>
           <p>Components Quick Intro</p>
           <ul>
-            <li class="fragment">Templates</li>
+            <li class="fragment">HTML, CSS, JS per component</li>
             <li class="fragment">Reusable</li>
             <li class="fragment">Shareable</li>
           </ul>
@@ -3010,49 +3014,6 @@
             </div>
           </div>
         </section>
-        <section id="chat-app-btn-2">
-          <div class="col2">
-            <div>
-              <pre class="font-xxs mt0 mb0">
-                <code data-trim data-noescape class="noMaxH">
-                 &lt;!-- src/components/ChatPage.vue --&gt;
-                  &lt;template&gt;
-                    &lt;v-container&gt;
-                      &lt;v-layout&gt;
-                        &lt;v-flex&gt;
-                          &lt;v-text-field
-                            label="Message"
-                            v-model="message"
-                          &gt;&lt;/v-text-field&gt;
-                        &lt;/v-flex&gt;
-                        <mark>&lt;v-flex&gt;
-                          &lt;v-btn flat icon color="pink"&gt;
-                            &lt;v-icon&gt;favorite&lt;/v-icon&gt;
-                          &lt;/v-btn&gt;
-                        &lt;/v-flex&gt;</mark>
-                      &lt;/v-layout&gt;
-                    &lt;/v-container&gt;
-                  &lt;/template&gt;
-
-                  &lt;script&gt;
-                    export default {
-                      data () {
-                        return {
-                          message: ''
-                        }
-                      }
-                    }
-                  &lt;/script&gt;
-                </code>
-              </pre>
-            </div>
-            <div>
-              <div class="fragment current-visible sample">
-                <img src="img/btn-2.png" style="border:none" />
-              </div>
-            </div>
-          </div>
-        </section>
         <section id="chat-app-btn-3">
           <div class="col2">
             <div>
@@ -3971,7 +3932,7 @@
                         user: null
                       },
                       <mark>mounted() {
-                        this.auth.onAuthStateChanged((user) =%gt; {
+                        this.auth.onAuthStateChanged((user) =&gt; {
                           this.user = user
                         })
                       }</mark>
@@ -4011,10 +3972,10 @@
                       data () {
                         db: firebaseApp.database(),
                         auth: firebase.auth(),
-                        <mark>user: null</mark>
+                        user: null
                       },
                       mounted() {
-                        this.auth.onAuthStateChanged((user) =%gt; {
+                        this.auth.onAuthStateChanged((user) =&gt; {
                           this.user = user
                         })
                       }
@@ -4025,95 +3986,254 @@
             </div>
           </div>
         </section>
-        <section id="chat-isLoggedIn">
+        <section id="chat-final-login-template">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
-                 &lt;!-- src/App.vue --&gt;
                   &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-toolbar color="purple darken-4" dark&gt;
-                        &lt;v-toolbar-title&gt;
-                          Slack Lite
-                        &lt;/v-toolbar-title&gt;
-                      &lt;/v-toolbar&gt;
-                      &lt;router-view&gt;&lt;/router-view&gt;
-                    &lt;/v-app&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout&gt;
+                        &lt;v-flex xs12 sm8 offset-sm2 md6 offset-md3&gt;
+                          &lt;v-card&gt;
+                            &lt;v-card-title&gt;
+                              Login
+                            &lt;/v-card-title&gt;
+                            &lt;v-card-text&gt;
+                              &lt;form @submit.prevent="login"&gt;
+                                &lt;v-text-field label="Email" v-model="email" /&gt;
+                                &lt;v-text-field label="Password" v-model="password" type="password" /&gt;
+                                &lt;button type="submit" style="display:none"&gt;&lt;/button&gt;
+                              &lt;/form&gt;
+                            &lt;/v-card-text&gt;
+                            &lt;v-card-actions&gt;
+                              &lt;v-btn class="orange white--text" @click="login"&gt;
+                                Login
+                              &lt;/v-btn&gt;
+                              &lt;v-spacer /&gt;
+                              &lt;v-btn flat class="grey--text" @click="createAccount()"&gt;
+                                Create Account
+                              &lt;/v-btn&gt;
+                            &lt;/v-card-actions&gt;
+                          &lt;/v-card&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                      &lt;v-snackbar
+                        :timeout="3000"
+                        bottom
+                        v-model="snackbar"
+                        multi-line
+                      &gt;
+                        {{ error }}
+                        &lt;v-btn flat color="blue" @click.native="snackbar = false"&gt;Close&lt;/v-btn&gt;
+                      &lt;/v-snackbar&gt;
+                    &lt;/v-container&gt;
                   &lt;/template&gt;
-
-                  &lt;script&gt;
-                    export default {
-                      data () {
-                      },
-                    }
-                  &lt;/script&gt;
                 </code>
               </pre>
             </div>
             <div>
               <div class="sample" style="height:100%;">
-                <iframe src="slack-lite/isLoggedIn/dist/index.html" height=450 scrolling="no"></iframe>
+                <iframe src="slack-lite/db2/dist/index.html" height=450 scrolling="no"></iframe>
               </div>
             </div>
           </div>
         </section>
-        <section id="chat-db">
+        <section id="chat-final-login-script">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
-                 &lt;!-- src/App.vue --&gt;
-                  &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-toolbar color="purple darken-4" dark&gt;
-                        &lt;v-toolbar-title&gt;
-                          Slack Lite
-                        &lt;/v-toolbar-title&gt;
-                      &lt;/v-toolbar&gt;
-                      &lt;router-view&gt;&lt;/router-view&gt;
-                    &lt;/v-app&gt;
-                  &lt;/template&gt;
-
-                  &lt;script&gt;
                     export default {
-                      data () {
+                      props: ['auth'],
+                      data() {
+                        return {
+                          email: '',
+                          password: '',
+                          error: '',
+                          snackbar: false
+                        }
+                      },
+                      methods: {
+                        login() {
+                          const {email, password, auth, $router} = this
+                          auth.signInWithEmailAndPassword(email, password)
+                          .then(function() {
+                            $router.push('/')
+                          })
+                          .catch((err) => {
+                            this.error = err.message
+                            this.snackbar = true
+                          })
+                        },
+                        createAccount() {
+                          const {email, password, auth, $router} = this
+                          auth.createUserWithEmailAndPassword(email, password)
+                          .then(function() {
+                            $router.push('/')
+                          })
+                          .catch((err) => {
+                            this.error = err.message
+                            this.snackbar = true
+                          })
+                        },
                       },
                     }
-                  &lt;/script&gt;
                 </code>
               </pre>
             </div>
             <div>
               <div class="sample" style="height:100%;">
-                <iframe src="slack-lite/db/dist/index.html" height=450 scrolling="no"></iframe>
+                <iframe src="slack-lite/db2/dist/index.html" height=450 scrolling="no"></iframe>
               </div>
             </div>
           </div>
         </section>
-        <section id="chat-db-2">
+        <section id="chat-final-router">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
-                 &lt;!-- src/App.vue --&gt;
-                  &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-toolbar color="purple darken-4" dark&gt;
-                        &lt;v-toolbar-title&gt;
-                          Slack Lite
-                        &lt;/v-toolbar-title&gt;
-                      &lt;/v-toolbar&gt;
-                      &lt;router-view&gt;&lt;/router-view&gt;
-                    &lt;/v-app&gt;
-                  &lt;/template&gt;
+                  import Vue from 'vue'
+                  import Router from 'vue-router'
+                  import ChatPage from '@/components/ChatPage'
+                  import LoginPage from '@/components/LoginPage'
 
-                  &lt;script&gt;
-                    export default {
-                      data () {
+                  Vue.use(Router)
+
+                  export default new Router({
+                    routes: [
+                      {
+                        path: '/',
+                        name: 'Chat',
+                        component: ChatPage
                       },
+                      {
+                        path: '/login',
+                        name: 'Login',
+                        component: LoginPage
+                      }
+                    ]
+                  })
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/db2/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-final-chat-page-template">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                  &lt;template&gt;
+                    &lt;v-container fill-height&gt;
+                      &lt;v-layout column&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-list two-line&gt;
+                            &lt;template v-for="msg in messageList"&gt;
+                              &lt;v-list-tile&gt;
+                                &lt;v-list-tile-content&gt;
+                                  &lt;v-list-tile-sub-title&gt;
+                                    {{ msg.user }} - {{ formatTime(msg.timestamp) }}
+                                  &lt;/v-list-tile-sub-title&gt;
+                                  &lt;v-list-tile-title&gt;
+                                    {{ msg.text }}
+                                  &lt;/v-list-tile-title&gt;
+                                &lt;/v-list-tile-content&gt;
+                              &lt;/v-list-tile&gt;
+                              &lt;v-divider&gt;&lt;/v-divider&gt;
+                            &lt;/template&gt;
+                          &lt;/v-list&gt;
+                        &lt;/v-flex&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-layout&gt;
+                            &lt;v-flex&gt;
+                              &lt;v-text-field
+                                label="Message"
+                                v-model="message"
+                                &gt;&lt;/v-text-field&gt;
+                            &lt;/v-flex&gt;
+                            &lt;v-flex xs1&gt;
+                              &lt;v-btn flat icon color="blue"
+                                v-on:click="sendMessage"&gt;
+                                &lt;v-icon&gt;send&lt;/v-icon&gt;
+                              &lt;/v-btn&gt;
+                            &lt;/v-flex&gt;
+                          &lt;/v-layout&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                      &lt;v-snackbar
+                        :timeout="3000"
+                        bottom
+                        v-model="snackbar"
+                        multi-line
+                      &gt;
+                        {{ error }}
+                        &lt;v-btn flat color="blue" @click.native="snackbar = false"&gt;Close&lt;/v-btn&gt;
+                      &lt;/v-snackbar&gt;
+                    &lt;/v-container&gt;
+                  &lt;/template&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/db2/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-final-chat-page-script">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                  import moment from 'moment'
+
+                  export default {
+                    props: ['db', 'user'],
+                    data () {
+                      return {
+                        message: '',
+                        messageList: [],
+                        error: '',
+                        snackbar: false
+                      }
+                    },
+                    methods: {
+                      sendMessage: function() {
+                        if (this.user !== null) {
+                          const messageObject = {
+                            user: this.user.email,
+                            timestamp: moment().unix(),
+                            text: this.message
+                          }
+                          this.db.ref('messages').push(messageObject)
+                          this.message = ''
+                        } else {
+                          this.error = 'Need to be logged in to do that',
+                          this.snackbar = true
+                        }
+                      },
+                      formatTime(t) {
+                        return moment(t, 'X').fromNow()
+                      }
+                    },
+                    mounted() {
+                      this.db.ref('messages').on('value', snapshot => {
+                        let messages = snapshot.val()
+                        if (messages) {
+                          messages = Object.keys(messages).map(key => messages[key])
+                          this.messageList = messages
+                        }
+                      })
                     }
-                  &lt;/script&gt;
+                  }
                 </code>
               </pre>
             </div>
@@ -4125,9 +4245,22 @@
           </div>
         </section>
         <section
+          data-background-image="img/deployed.png"
+          data-background-size="contain"
+        >
+        </section>
+        <section id="chat-demo">
+          <h2>https://maurop123.github.io/slack-lite/</h2>
+        </section>
+        <section
           data-background-image="https://media.giphy.com/media/lD76yTC5zxZPG/giphy.gif"
           data-background-size="contain"
         >
+        </section>
+        <section id="chat-contact">
+          <h2>mauromadeit.com</h2>
+          <h2>twitter @mauromadeit</h2>
+          <h2>github @maurop123</h2>
         </section>
       </div>
     </div>
