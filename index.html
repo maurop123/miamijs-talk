@@ -34,6 +34,9 @@
       .vue-green-text {
         color: #4fc08d;
       }
+      .vue-green-text-imp {
+        color: #4fc08d!important;
+      }
       .reveal .slides section .fragment.highlight-red.visible,
       .reveal .slides section .fragment.highlight-red.visible,
       .reveal .slides section .fragment.highlight-current-red.current-fragment,
@@ -112,6 +115,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+      .reveal .slides section .sample.fragment.current-visible {
+        height: 0;
+      }
+      .reveal .slides section .sample.fragment.current-visible.current-fragment {
+        height: 100%;
       }
       .h80 {
         height: 80%;
@@ -2533,24 +2542,242 @@
             </code>
           </pre>
         </section>
-        <section data-background-video="img/vuetify-pwa-vue-cli.mp4"
+        <section id="vue-cli-5"
+          data-background-video="img/vuetify-pwa-vue-cli.mp4"
           data-background-video-muted
           data-background-size="contain">
         </section>
-        <section
+        <section id="vue-cli-6"
           data-background-image="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif"
+          data-background-size="contain"
+        >
+        </section>
+        <section id="structure">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project.png" style="border:none" />
+            </div>
+          </div>
+        </section>
+        <section id="structure-src">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project-src.png" style="border:none" />
+            </div>
+          </div>
+        </section>
+        <section id="structure-main">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project-main.png" style="border:none" />
+            </div>
+            <div class="fragment" data-fragment-index="0">
+              <span class="font-sm">src/main.js</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 <span class="fragment highlight-current-green" data-fragment-index="1">import Vue from 'vue'</span>
+                  <span class="fragment highlight-current-green" data-fragment-index="2">import Vuetify from 'vuetify'</span>
+                  <span class="fragment highlight-current-green" data-fragment-index="4">import './stylus/main.styl'</span>
+
+                  <span class="fragment highlight-current-green" data-fragment-index="7"><span class="fragment highlight-current-green" data-fragment-index="8">import router from './router'</span></span>
+                  <span class="fragment highlight-current-green" data-fragment-index="9"><span class="fragment highlight-current-green" data-fragment-index="10"><span class="fragment highlight-current-green" data-fragment-index="11">import App from './App.vue'</span></span></span>
+
+                  <span class="fragment highlight-current-green" data-fragment-index="3">Vue.use(Vuetify)</span>
+
+                  <span class="fragment highlight-current-green" data-fragment-index="5">new Vue({</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="6">el: '#app',</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="8">router,</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="10">components: { App },</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="11">template: '&lt;App/&gt;'</span>
+                  <span class="fragment highlight-current-green" data-fragment-index="5">})</span>
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="structure-app">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project-app.png" style="border:none" />
+            </div>
+            <div class="fragment current-visible">
+              <span class="font-sm">src/App.vue</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-app light&gt;
+                      &lt;v-navigation-drawer
+                        persistent
+                        :mini-variant="miniVariant"
+                        :clipped="clipped"
+                        v-model="drawer"
+                        enable-resize-watcher
+                        app
+                      &gt;
+                        &lt;v-list&gt;
+                          &lt;v-list-tile
+                            value="true"
+                            v-for="(item, i) in items"
+                            :key="i"
+                          &gt;
+                            &lt;v-list-tile-action&gt;
+                              &lt;v-icon light v-html="item.icon"&gt;&lt;/v-icon&gt;
+                            &lt;/v-list-tile-action&gt;
+                            &lt;v-list-tile-content&gt;
+
+                    ...
+                </code>
+              </pre>
+            </div>
+            <div class="fragment current-visible">
+            </div>
+          </div>
+        </section>
+        <section id="structure-app-2">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project-app.png" style="border:none" />
+            </div>
+            <div class="fragment" data-fragment-index="1">
+              <span class="font-sm">src/App.vue</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    <span class="fragment highlight-current-green" data-fragment-index="2">&lt;v-app&gt;</span>
+                      <span class="fragment highlight-current-green" data-fragment-index="3">&lt;router-view&gt;&lt;/router-view&gt;</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="2">&lt;/v-app&gt;</span>
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="structure-components">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project-components.png" style="border:none" />
+            </div>
+          </div>
+        </section>
+        <section id="structure-components-2">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project-hello.png" style="border:none" />
+            </div>
+          </div>
+        </section>
+        <section id="structure-chat-page">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project-chat-page.png" style="border:none" />
+            </div>
+            <div class="fragment">
+              <span class="font-sm">src/components/ChatPage.vue</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    <span class="fragment">&lt;h1&gt;Hey Slacker!&lt;/h1&gt;</span>
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div class="fragment xyCenter">
+              <div class="sample">
+                <p>Hey Slacker!</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="structure-router">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project-router.png" style="border:none" />
+            </div>
+            <div class="fragment" data-fragment-index="0">
+              <span class="font-sm">src/router/index.js</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 <span class="fragment highlight-current-green" data-fragment-index="1">import Vue from 'vue'</span>
+                  <span class="fragment highlight-current-green" data-fragment-index="2">import Router from 'vue-router'</span>
+                  <span class="fragment highlight-current-green" data-fragment-index="9">import Hello from '@/components/Hello.vue'</span>
+
+                  <span class="fragment highlight-current-green" data-fragment-index="3">Vue.use(Router)</span>
+
+                  <span class="fragment highlight-current-green" data-fragment-index="4">export default new Router({</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="5">routes: [</span>
+                      <span class="fragment highlight-current-green" data-fragment-index="6">{</span>
+                        <span class="fragment highlight-current-green" data-fragment-index="6"><span class="fragment highlight-current-green" data-fragment-index="7">path: '/',</span></span>
+                        <span class="fragment highlight-current-green" data-fragment-index="6">name: 'Hello',</span>
+                        <span class="fragment highlight-current-green" data-fragment-index="6"><span class="fragment highlight-current-green" data-fragment-index="8"><span class="fragment highlight-current-green" data-fragment-index="9">component: Hello</span></span></span>
+                      <span class="fragment highlight-current-green" data-fragment-index="6">}</span>
+                    <span class="fragment highlight-current-green" data-fragment-index="5">]</span>
+                  <span class="fragment highlight-current-green" data-fragment-index="4">})</span>
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="fragment current-visible" data-fragment-index="10">
+          </div>
+        </section>
+        <section id="structure-router-2">
+          <div class="col2">
+            <div style="height:600px">
+              <img src="img/project-router.png" style="border:none" />
+            </div>
+            <div>
+              <span class="font-sm">src/router/index.js</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 import Vue from 'vue'
+                  import Router from 'vue-router'
+                  <span class="fragment highlight-green" data-fragment-index="1">import ChatPage from '@/components/ChatPage.vue'</span>
+
+                  Vue.use(Router)
+
+                  export default new Router({
+                    routes: [
+                      {
+                        path: '/',
+                        <span class="fragment highlight-green" data-fragment-index="1">name: 'Chat',</span>
+                        <span class="fragment highlight-green" data-fragment-index="1">component: ChatPage</span>
+                      }
+                    ]
+                  })
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="structure-fin"
+          data-background-image="https://media.giphy.com/media/l3q2NdI5m0jrtwFpu/giphy.gif"
           data-background-size="contain"
         >
         </section>
         <section id="chat-app">
           <div class="col2">
             <div>
-              <span class="font-sm">App.vue</span>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
-                    &lt;v-app&gt;
-                    &lt;/v-app&gt;
+
                   &lt;/template&gt;
 
                   &lt;script&gt;
@@ -2565,7 +2792,17 @@
               </pre>
             </div>
             <div>
-              <div class="sample" style="height:100%;">
+              <div class="fragment current-visible sample">
+                <img src="img/vbtn-1.png" style="border:none" />
+              </div>
+              <div class="fragment current-visible sample">
+              </div>
+              <div class="fragment current-visible sample">
+                <img src="img/vbtn-2.png" style="border:none" />
+              </div>
+              <div class="fragment current-visible sample">
+              </div>
+              <div class="fragment current-visible sample" style="height:100%;">
                 <iframe src="slack-lite/vapp/dist/index.html" height=450 scrolling="no"></iframe>
               </div>
             </div>
@@ -2574,17 +2811,14 @@
         <section id="chat-app-2">
           <div class="col2">
             <div>
-              <span class="font-sm">App.vue</span>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-text-field
-                        name="input-1"
-                        label="Label Text"
-                        id="testing"
-                      &gt;&lt;/v-text-field&gt;
-                    &lt;/v-app&gt;
+                    &lt;v-text-field
+                      name="input-1"
+                      label="Label Text"
+                      id="testing"
+                    &gt;&lt;/v-text-field&gt;
                   &lt;/template&gt;
 
                   &lt;script&gt;
@@ -2608,22 +2842,19 @@
         <section id="chat-app-3">
           <div class="col2">
             <div>
-              <span class="font-sm">App.vue</span>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-container&gt;
-                        &lt;v-layout&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-text-field
-                              label="Message"
-                              v-model="message"
-                            &gt;&lt;/v-text-field&gt;
-                          &lt;/v-flex&gt;
-                        &lt;/v-layout&gt;
-                      &lt;/v-container&gt;
-                    &lt;/v-app&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-text-field
+                            label="Message"
+                            v-model="message"
+                          &gt;&lt;/v-text-field&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
                   &lt;/template&gt;
 
                   &lt;script&gt;
@@ -2648,27 +2879,24 @@
         <section id="chat-app-4">
           <div class="col2">
             <div>
-              <span class="font-sm">App.vue</span>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-container&gt;
-                        &lt;v-layout&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-text-field
-                              label="Message"
-                              v-model="message"
-                            &gt;&lt;/v-text-field&gt;
-                          &lt;/v-flex&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-btn flat icon color="pink"&gt;
-                              &lt;v-icon&gt;favorite&lt;/v-icon&gt;
-                            &lt;/v-btn&gt;
-                          &lt;/v-flex&gt;
-                        &lt;/v-layout&gt;
-                      &lt;/v-container&gt;
-                    &lt;/v-app&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-text-field
+                            label="Message"
+                            v-model="message"
+                          &gt;&lt;/v-text-field&gt;
+                        &lt;/v-flex&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-btn flat icon color="pink"&gt;
+                            &lt;v-icon&gt;favorite&lt;/v-icon&gt;
+                          &lt;/v-btn&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
                   &lt;/template&gt;
 
                   &lt;script&gt;
@@ -2693,27 +2921,24 @@
         <section id="chat-app-5">
           <div class="col2">
             <div>
-              <span class="font-sm">App.vue</span>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-container&gt;
-                        &lt;v-layout&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-text-field
-                              label="Message"
-                              v-model="message"
-                            &gt;&lt;/v-text-field&gt;
-                          &lt;/v-flex&gt;
-                          &lt;v-flex xs1&gt;
-                            &lt;v-btn flat icon color="blue"
-                              v-on:click="sendMessage"&gt;
-                            &lt;/v-btn&gt;
-                          &lt;/v-flex&gt;
-                        &lt;/v-layout&gt;
-                      &lt;/v-container&gt;
-                    &lt;/v-app&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-text-field
+                            label="Message"
+                            v-model="message"
+                          &gt;&lt;/v-text-field&gt;
+                        &lt;/v-flex&gt;
+                        &lt;v-flex xs1&gt;
+                          &lt;v-btn flat icon color="blue"
+                            v-on:click="sendMessage"&gt;
+                          &lt;/v-btn&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
                   &lt;/template&gt;
 
                   &lt;script&gt;
@@ -2747,36 +2972,34 @@
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-container&gt;
-                        &lt;v-layout column&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-list&gt;
-                              &lt;template v-for="msg in messageList"&gt;
-                                &lt;v-list-tile&gt;
-                                  {{ msg }}
-                                &lt;/v-list-tile&gt;
-                              &lt;/template&gt;
-                            &lt;/v-list&gt;
-                          &lt;/v-flex&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-layout&gt;
-                              &lt;v-flex&gt;
-                                &lt;v-text-field
-                                  label="Message"
-                                  v-model="message"
-                                &gt;&lt;/v-text-field&gt;
-                              &lt;/v-flex&gt;
-                              &lt;v-flex xs1&gt;
-                                &lt;v-btn flat icon color="blue"
-                                  v-on:click="sendMessage"&gt;
-                                &lt;/v-btn&gt;
-                              &lt;/v-flex&gt;
-                            &lt;/v-layout&gt;
-                          &lt;/v-flex&gt;
-                        &lt;/v-layout&gt;
-                      &lt;/v-container&gt;
-                    &lt;/v-app&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout column&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-list&gt;
+                            &lt;template v-for="msg in messageList"&gt;
+                              &lt;v-list-tile&gt;
+                                {{ msg }}
+                              &lt;/v-list-tile&gt;
+                            &lt;/template&gt;
+                          &lt;/v-list&gt;
+                        &lt;/v-flex&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-layout&gt;
+                            &lt;v-flex&gt;
+                              &lt;v-text-field
+                                label="Message"
+                                v-model="message"
+                              &gt;&lt;/v-text-field&gt;
+                            &lt;/v-flex&gt;
+                            &lt;v-flex xs1&gt;
+                              &lt;v-btn flat icon color="blue"
+                                v-on:click="sendMessage"&gt;
+                              &lt;/v-btn&gt;
+                            &lt;/v-flex&gt;
+                          &lt;/v-layout&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
                   &lt;/template&gt;
 
                   &lt;script&gt;
@@ -2810,36 +3033,34 @@
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-container&gt;
-                        &lt;v-layout column&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-list&gt;
-                              &lt;template v-for="msg in messageList"&gt;
-                                &lt;v-list-tile&gt;
-                                  {{ msg }}
-                                &lt;/v-list-tile&gt;
-                              &lt;/template&gt;
-                            &lt;/v-list&gt;
-                          &lt;/v-flex&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-layout&gt;
-                              &lt;v-flex&gt;
-                                &lt;v-text-field
-                                  label="Message"
-                                  v-model="message"
-                                &gt;&lt;/v-text-field&gt;
-                              &lt;/v-flex&gt;
-                              &lt;v-flex xs1&gt;
-                                &lt;v-btn flat icon color="blue"
-                                  v-on:click="sendMessage"&gt;
-                                &lt;/v-btn&gt;
-                              &lt;/v-flex&gt;
-                            &lt;/v-layout&gt;
-                          &lt;/v-flex&gt;
-                        &lt;/v-layout&gt;
-                      &lt;/v-container&gt;
-                    &lt;/v-app&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout column&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-list&gt;
+                            &lt;template v-for="msg in messageList"&gt;
+                              &lt;v-list-tile&gt;
+                                {{ msg }}
+                              &lt;/v-list-tile&gt;
+                            &lt;/template&gt;
+                          &lt;/v-list&gt;
+                        &lt;/v-flex&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-layout&gt;
+                            &lt;v-flex&gt;
+                              &lt;v-text-field
+                                label="Message"
+                                v-model="message"
+                              &gt;&lt;/v-text-field&gt;
+                            &lt;/v-flex&gt;
+                            &lt;v-flex xs1&gt;
+                              &lt;v-btn flat icon color="blue"
+                                v-on:click="sendMessage"&gt;
+                              &lt;/v-btn&gt;
+                            &lt;/v-flex&gt;
+                          &lt;/v-layout&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
                   &lt;/template&gt;
 
                   &lt;script&gt;
@@ -2880,36 +3101,34 @@
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
-                    &lt;v-app&gt;
-                      &lt;v-container fill-height&gt;
-                        &lt;v-layout column&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-list&gt;
-                              &lt;template v-for="msg in messageList"&gt;
-                                &lt;v-list-tile&gt;
-                                  {{ msg }}
-                                &lt;/v-list-tile&gt;
-                              &lt;/template&gt;
-                            &lt;/v-list&gt;
-                          &lt;/v-flex&gt;
-                          &lt;v-flex&gt;
-                            &lt;v-layout&gt;
-                              &lt;v-flex&gt;
-                                &lt;v-text-field
-                                  label="Message"
-                                  v-model="message"
-                                &gt;&lt;/v-text-field&gt;
-                              &lt;/v-flex&gt;
-                              &lt;v-flex xs1&gt;
-                                &lt;v-btn flat icon color="blue"
-                                  v-on:click="sendMessage"&gt;
-                                &lt;/v-btn&gt;
-                              &lt;/v-flex&gt;
-                            &lt;/v-layout&gt;
-                          &lt;/v-flex&gt;
-                        &lt;/v-layout&gt;
-                      &lt;/v-container&gt;
-                    &lt;/v-app&gt;
+                    &lt;v-container fill-height&gt;
+                      &lt;v-layout column&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-list&gt;
+                            &lt;template v-for="msg in messageList"&gt;
+                              &lt;v-list-tile&gt;
+                                {{ msg }}
+                              &lt;/v-list-tile&gt;
+                            &lt;/template&gt;
+                          &lt;/v-list&gt;
+                        &lt;/v-flex&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-layout&gt;
+                            &lt;v-flex&gt;
+                              &lt;v-text-field
+                                label="Message"
+                                v-model="message"
+                              &gt;&lt;/v-text-field&gt;
+                            &lt;/v-flex&gt;
+                            &lt;v-flex xs1&gt;
+                              &lt;v-btn flat icon color="blue"
+                                v-on:click="sendMessage"&gt;
+                              &lt;/v-btn&gt;
+                            &lt;/v-flex&gt;
+                          &lt;/v-layout&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
                   &lt;/template&gt;
 
                   &lt;script&gt;
