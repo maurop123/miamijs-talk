@@ -2776,7 +2776,8 @@
             <div>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
-                 &lt;template&gt;
+                 &lt;!-- src/components/ChatPage.vue --&gt;
+                  &lt;template&gt;
 
                   &lt;/template&gt;
 
@@ -2798,12 +2799,78 @@
             </div>
           </div>
         </section>
-        <section id="chat-app-2">
+        <section id="chat-app-text">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
-                 &lt;template&gt;
+                 &lt;!-- src/components/ChatPage.vue --&gt;
+                  &lt;template&gt;
+
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="fragment current-visible sample">
+                <img src="img/vbtn-1.png" style="border:none" />
+              </div>
+              <div class="fragment current-visible sample">
+              </div>
+              <div class="fragment sample">
+                <img src="img/vbtn-2.png" style="border:none" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-text-2">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/components/ChatPage.vue --&gt;
+                  &lt;template&gt;
+                    <mark>&lt;v-text-field
+                      name="input-1"
+                      label="Label Text"
+                      id="testing"
+                    &gt;&lt;/v-text-field&gt;</mark>
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="fragment sample" style="height:100%;">
+                <iframe src="slack-lite/text-field/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-vlayout">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/components/ChatPage.vue --&gt;
+                  &lt;template&gt;
                     &lt;v-text-field
                       name="input-1"
                       label="Label Text"
@@ -2824,27 +2891,89 @@
             </div>
             <div>
               <div class="fragment current-visible sample">
-                <img src="img/vbtn-1.png" style="border:none" />
-              </div>
-              <div class="fragment current-visible sample">
-              </div>
-              <div class="fragment current-visible sample">
-                <img src="img/vbtn-2.png" style="border:none" />
-              </div>
-              <div class="fragment current-visible sample">
-              </div>
-              <div class="sample" style="height:100%;">
-                <iframe src="slack-lite/text-field/dist/index.html" height=450 scrolling="no"></iframe>
+                <img src="img/v-layout.png" style="border:none" />
               </div>
             </div>
           </div>
         </section>
-        <section id="chat-app-3">
+        <section id="chat-app-vlayout-2">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
-                 &lt;template&gt;
+                 &lt;!-- src/components/ChatPage.vue --&gt;
+                  &lt;template&gt;
+                    <mark>&lt;v-container&gt;
+                      &lt;v-layout&gt;
+                        &lt;v-flex&gt;</mark>
+                          &lt;v-text-field
+                            name="input-1"
+                            label="Label Text"
+                            id="testing"
+                          &gt;&lt;/v-text-field&gt;
+                        <mark>&lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;</mark>
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-vlayout-3">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/components/ChatPage.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-text-field
+                            <mark>label="Message"
+                            v-model="message"</mark>
+                          &gt;&lt;/v-text-field&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          <mark>message: ''</mark>
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="fragment sample" style="height:100%;">
+                <iframe src="slack-lite/vmodel/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-btn">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/components/ChatPage.vue --&gt;
+                  &lt;template&gt;
                     &lt;v-container&gt;
                       &lt;v-layout&gt;
                         &lt;v-flex&gt;
@@ -2870,13 +2999,104 @@
               </pre>
             </div>
             <div>
-              <div class="sample" style="height:100%;">
-                <iframe src="slack-lite/vmodel/dist/index.html" height=450 scrolling="no"></iframe>
+              <div class="fragment current-visible sample">
+                <img src="img/btn.png" style="border:none" />
+              </div>
+              <div class="fragment current-visible sample">
+              </div>
+              <div class="fragment sample">
+                <img src="img/btn-2.png" style="border:none" />
               </div>
             </div>
           </div>
         </section>
-        <section id="chat-app-4">
+        <section id="chat-app-btn-2">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/components/ChatPage.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-text-field
+                            label="Message"
+                            v-model="message"
+                          &gt;&lt;/v-text-field&gt;
+                        &lt;/v-flex&gt;
+                        <mark>&lt;v-flex&gt;
+                          &lt;v-btn flat icon color="pink"&gt;
+                            &lt;v-icon&gt;favorite&lt;/v-icon&gt;
+                          &lt;/v-btn&gt;
+                        &lt;/v-flex&gt;</mark>
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: ''
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="fragment current-visible sample">
+                <img src="img/btn-2.png" style="border:none" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-btn-3">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/components/ChatPage.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-text-field
+                            label="Message"
+                            v-model="message"
+                          &gt;&lt;/v-text-field&gt;
+                        &lt;/v-flex&gt;
+                        <mark>&lt;v-flex&gt;
+                          &lt;v-btn flat icon color="pink"&gt;
+                            &lt;v-icon&gt;favorite&lt;/v-icon&gt;
+                          &lt;/v-btn&gt;
+                        &lt;/v-flex&gt;</mark>
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: ''
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="fragment sample" style="height:100%;">
+                <iframe src="slack-lite/vbtn/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-btn-4">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
@@ -2890,9 +3110,9 @@
                             v-model="message"
                           &gt;&lt;/v-text-field&gt;
                         &lt;/v-flex&gt;
-                        &lt;v-flex&gt;
-                          &lt;v-btn flat icon color="pink"&gt;
-                            &lt;v-icon&gt;favorite&lt;/v-icon&gt;
+                        &lt;v-flex xs1&gt;
+                          &lt;v-btn flat icon <mark>color="blue"</mark>&gt;
+                            &lt;v-icon&gt;<mark>send</mark>&lt;/v-icon&gt;
                           &lt;/v-btn&gt;
                         &lt;/v-flex&gt;
                       &lt;/v-layout&gt;
@@ -2903,7 +3123,7 @@
                     export default {
                       data () {
                         return {
-                          message: ''
+                          message: '',
                         }
                       }
                     }
@@ -2913,12 +3133,12 @@
             </div>
             <div>
               <div class="sample" style="height:100%;">
-                <iframe src="slack-lite/vbtn/dist/index.html" height=450 scrolling="no"></iframe>
+                <iframe src="slack-lite/send-msg/dist/index.html" height=450 scrolling="no"></iframe>
               </div>
             </div>
           </div>
         </section>
-        <section id="chat-app-5">
+        <section id="chat-app-btn-5">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
@@ -2934,7 +3154,8 @@
                         &lt;/v-flex&gt;
                         &lt;v-flex xs1&gt;
                           &lt;v-btn flat icon color="blue"
-                            v-on:click="sendMessage"&gt;
+                            <mark>v-on:click="sendMessage"</mark>&gt;
+                            &lt;v-icon&gt;send&lt;/v-icon&gt;
                           &lt;/v-btn&gt;
                         &lt;/v-flex&gt;
                       &lt;/v-layout&gt;
@@ -2946,13 +3167,13 @@
                       data () {
                         return {
                           message: '',
-                          messageList: []
+                          <mark>messageList: []</mark>
                         }
                       },
                       methods: {
-                        sendMessage: function() {
+                        <mark>sendMessage: function() {
                           this.messageList.push(this.message)
-                        }
+                        }</mark>
                       }
                     }
                   &lt;/script&gt;
@@ -2966,36 +3187,26 @@
             </div>
           </div>
         </section>
-        <section id="chat-app-6">
+        <section id="chat-app-vlist">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
                     &lt;v-container&gt;
-                      &lt;v-layout column&gt;
+                      &lt;v-layout <mark>column</mark>&gt;
                         &lt;v-flex&gt;
-                          &lt;v-list&gt;
+                          <mark>&lt;v-list&gt;
                             &lt;template v-for="msg in messageList"&gt;
                               &lt;v-list-tile&gt;
                                 {{ msg }}
                               &lt;/v-list-tile&gt;
                             &lt;/template&gt;
-                          &lt;/v-list&gt;
+                          &lt;/v-list&gt;</mark>
                         &lt;/v-flex&gt;
                         &lt;v-flex&gt;
                           &lt;v-layout&gt;
-                            &lt;v-flex&gt;
-                              &lt;v-text-field
-                                label="Message"
-                                v-model="message"
-                              &gt;&lt;/v-text-field&gt;
-                            &lt;/v-flex&gt;
-                            &lt;v-flex xs1&gt;
-                              &lt;v-btn flat icon color="blue"
-                                v-on:click="sendMessage"&gt;
-                              &lt;/v-btn&gt;
-                            &lt;/v-flex&gt;
+                          ...
                           &lt;/v-layout&gt;
                         &lt;/v-flex&gt;
                       &lt;/v-layout&gt;
@@ -3019,15 +3230,10 @@
                   &lt;/script&gt;
                 </code>
               </pre>
-            </div>
-            <div>
-              <div class="sample" style="height:100%;">
-                <iframe src="slack-lite/vlist/dist/index.html" height=450 scrolling="no"></iframe>
-              </div>
             </div>
           </div>
         </section>
-        <section id="chat-app-7">
+        <section id="chat-app-vlist-2">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
@@ -3037,7 +3243,7 @@
                       &lt;v-layout column&gt;
                         &lt;v-flex&gt;
                           &lt;v-list&gt;
-                            &lt;template v-for="msg in messageList"&gt;
+                            &lt;template <mark>v-for="msg in messageList"</mark>&gt;
                               &lt;v-list-tile&gt;
                                 {{ msg }}
                               &lt;/v-list-tile&gt;
@@ -3046,17 +3252,7 @@
                         &lt;/v-flex&gt;
                         &lt;v-flex&gt;
                           &lt;v-layout&gt;
-                            &lt;v-flex&gt;
-                              &lt;v-text-field
-                                label="Message"
-                                v-model="message"
-                              &gt;&lt;/v-text-field&gt;
-                            &lt;/v-flex&gt;
-                            &lt;v-flex xs1&gt;
-                              &lt;v-btn flat icon color="blue"
-                                v-on:click="sendMessage"&gt;
-                              &lt;/v-btn&gt;
-                            &lt;/v-flex&gt;
+                          ...
                           &lt;/v-layout&gt;
                         &lt;/v-flex&gt;
                       &lt;/v-layout&gt;
@@ -3074,34 +3270,73 @@
                       methods: {
                         sendMessage: function() {
                           this.messageList.push(this.message)
-                          this.message = ''
                         }
                       }
                     }
                   &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-vlist-3">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-container&gt;
+                      &lt;v-layout column&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-list&gt;
+                            &lt;template v-for="msg in messageList"&gt;
+                              &lt;v-list-tile&gt;
+                                <mark>{{ msg }}</mark>
+                              &lt;/v-list-tile&gt;
+                            &lt;/template&gt;
+                          &lt;/v-list&gt;
+                        &lt;/v-flex&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-layout&gt;
+                          ...
+                          &lt;/v-layout&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
+                  &lt;/template&gt;
 
-                  &lt;style&gt;
-                   .application--light .list {
-                     background: none;
-                   }
-                  &lt;/style&gt;
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: '',
+                          messageList: []
+                        }
+                      },
+                      methods: {
+                        sendMessage: function() {
+                          this.messageList.push(this.message)
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
                 </code>
               </pre>
             </div>
             <div>
-              <div class="sample" style="height:100%;">
+              <div class="fragment sample" style="height:100%;">
                 <iframe src="slack-lite/clean-bugs/dist/index.html" height=450 scrolling="no"></iframe>
               </div>
             </div>
           </div>
         </section>
-        <section id="chat-app-8">
+        <section id="chat-app-fill-height">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
                  &lt;template&gt;
-                    &lt;v-container fill-height&gt;
+                    &lt;v-container&gt;
                       &lt;v-layout column&gt;
                         &lt;v-flex&gt;
                           &lt;v-list&gt;
@@ -3114,17 +3349,53 @@
                         &lt;/v-flex&gt;
                         &lt;v-flex&gt;
                           &lt;v-layout&gt;
-                            &lt;v-flex&gt;
-                              &lt;v-text-field
-                                label="Message"
-                                v-model="message"
-                              &gt;&lt;/v-text-field&gt;
-                            &lt;/v-flex&gt;
-                            &lt;v-flex xs1&gt;
-                              &lt;v-btn flat icon color="blue"
-                                v-on:click="sendMessage"&gt;
-                              &lt;/v-btn&gt;
-                            &lt;/v-flex&gt;
+                          ...
+                          &lt;/v-layout&gt;
+                        &lt;/v-flex&gt;
+                      &lt;/v-layout&gt;
+                    &lt;/v-container&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: '',
+                          messageList: []
+                        }
+                      },
+                      methods: {
+                        sendMessage: function() {
+                          this.messageList.push(this.message)
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-fill-height-2">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-container <mark>fill-height</mark>&gt;
+                      &lt;v-layout column&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-list&gt;
+                            &lt;template v-for="msg in messageList"&gt;
+                              &lt;v-list-tile&gt;
+                                {{ msg }}
+                              &lt;/v-list-tile&gt;
+                            &lt;/template&gt;
+                          &lt;/v-list&gt;
+                        &lt;/v-flex&gt;
+                        &lt;v-flex&gt;
+                          &lt;v-layout&gt;
+                          ...
                           &lt;/v-layout&gt;
                         &lt;/v-flex&gt;
                       &lt;/v-layout&gt;
@@ -3147,20 +3418,11 @@
                       }
                     }
                   &lt;/script&gt;
-
-                  &lt;style&gt;
-                   .application--light .list {
-                     background: none;
-                   }
-                   .container.fill-height {
-                     align-items: flex-end;
-                   }
-                  &lt;/style&gt;
                 </code>
               </pre>
             </div>
             <div>
-              <div class="sample" style="height:100%;">
+              <div class="fragment sample" style="height:100%;">
                 <iframe src="slack-lite/clean-bugs-2/dist/index.html" height=450 scrolling="no"></iframe>
               </div>
             </div>
@@ -3174,7 +3436,63 @@
                  &lt;!-- src/App.vue --&gt;
                   &lt;template&gt;
                     &lt;v-app&gt;
-                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                      },
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-toolbar-2">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      <mark>&lt;v-toolbar color="purple darken-4" dark&gt;
+                        &lt;v-toolbar-title&gt;
+                          Slack Lite
+                        &lt;/v-toolbar-title&gt;
+                      &lt;/v-toolbar&gt;</mark>
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                      },
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="fragment sample" style="height:100%;">
+                <iframe src="slack-lite/toolbar/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-toolbar-3">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar <mark>color="purple darken-4" dark</mark>&gt;
                         &lt;v-toolbar-title&gt;
                           Slack Lite
                         &lt;/v-toolbar-title&gt;
@@ -3199,7 +3517,7 @@
             </div>
           </div>
         </section>
-        <section id="chat-login">
+        <section id="chat-login-toolbar">
           <div class="col2">
             <div>
               <pre class="font-xxs mt0 mb0">
@@ -3225,10 +3543,485 @@
                 </code>
               </pre>
             </div>
+          </div>
+        </section>
+        <section id="chat-login-toolbar-1">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                        &lt;v-toolbar-title&gt;
+                          Slack Lite
+                        &lt;/v-toolbar-title&gt;
+                        <mark>&lt;v-spacer&gt;&lt;/v-spacer&gt;
+                        &lt;v-toolbar-items&gt;
+                          &lt;v-btn flat to="/login"&gt;Login&lt;/v-btn&gt;
+                        &lt;/v-toolbar-items&gt;</mark>
+                      &lt;/v-toolbar&gt;
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                      },
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="fragment sample" style="height:100%;">
+                <iframe src="slack-lite/login/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-login-toolbar-2">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                        &lt;v-toolbar-title&gt;
+                          Slack Lite
+                        &lt;/v-toolbar-title&gt;
+                        <mark>&lt;v-spacer&gt;&lt;/v-spacer&gt;</mark>
+                        &lt;v-toolbar-items&gt;
+                          &lt;v-btn flat to="/login"&gt;Login&lt;/v-btn&gt;
+                        &lt;/v-toolbar-items&gt;
+                      &lt;/v-toolbar&gt;
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                      },
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
             <div>
               <div class="sample" style="height:100%;">
                 <iframe src="slack-lite/login/dist/index.html" height=450 scrolling="no"></iframe>
               </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-login-toolbar-3">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                        &lt;v-toolbar-title&gt;
+                          Slack Lite
+                        &lt;/v-toolbar-title&gt;
+                        &lt;v-spacer&gt;&lt;/v-spacer&gt;
+                        <mark>&lt;v-toolbar-items&gt;
+                          &lt;v-btn flat to="/login"&gt;Login&lt;/v-btn&gt;
+                        &lt;/v-toolbar-items&gt;</mark>
+                      &lt;/v-toolbar&gt;
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                      },
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/login/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="firebase"
+          data-background-image="https://cdn57.androidauthority.net/wp-content/uploads/2017/04/Firebase-Logo-840x272.png"
+          data-background-size="auto"
+          data-background-color="white">
+        </section>
+        <section id="firebase-npm">
+          <pre class="font-xxs">
+            <code data-trim data-noescape class="noMaxH">
+             foo@bar:code$ npm install firebase
+            </code>
+          </pre>
+        </section>
+        <section id="chat-firebase-setup">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                    ...
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+                    
+                    })
+
+                    export default {
+                      data () {
+                        db: firebaseApp.database(),
+                        auth: firebase.auth()
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-firebase-setup-2">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                    ...
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    <mark>import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+                    
+                    })</mark>
+
+                    export default {
+                      data () {
+                        db: firebaseApp.database(),
+                        auth: firebase.auth()
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-firebase-setup-3">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                    ...
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+
+                    })
+
+                    export default {
+                      data () {
+                        <mark>db: firebaseApp.database(),
+                        auth: firebase.auth()</mark>
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-firebase-setup-4">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                    ...
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+                    <mark>...config goes here...</mark>
+                    })
+
+                    export default {
+                      data () {
+                        db: firebaseApp.database(),
+                        auth: firebase.auth()
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="firebase-config"
+          data-background-video="img/firebase-setup.mp4"
+          data-background-video-muted
+          data-background-size="contain">
+        </section>
+        <section id="chat-firebase-setup-5">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                      ...
+                      &lt;/v-toolbar&gt;
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+
+                    })
+
+                    export default {
+                      data () {
+                        db: firebaseApp.database(),
+                        auth: firebase.auth()
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-firebase-setup-6">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                      ...
+                      &lt;/v-toolbar&gt;
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+                      <mark>apiKey: "AIzaSyD8Nl-dkVKGp3hyznikkh3jTRuOO2Bvh_k",
+                      authDomain: "slack-lite.firebaseapp.com",
+                      databaseURL: "https://slack-lite.firebaseio.com",</mark>
+                    })
+
+                    export default {
+                      data () {
+                        db: firebaseApp.database(),
+                        auth: firebase.auth()
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-firebase-setup-7">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                      ...
+                      &lt;/v-toolbar&gt;
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+                      apiKey: "AIzaSyD8Nl-dkVKGp3hyznikkh3jTRuOO2Bvh_k",
+                      authDomain: "slack-lite.firebaseapp.com",
+                      databaseURL: "https://slack-lite.firebaseio.com",
+                    })
+
+                    export default {
+                      data () {
+                        db: firebaseApp.database(),
+                        auth: firebase.auth()
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-firebase-setup-8">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                      ...
+                      &lt;/v-toolbar&gt;
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+                      apiKey: "AIzaSyD8Nl-dkVKGp3hyznikkh3jTRuOO2Bvh_k",
+                      authDomain: "slack-lite.firebaseapp.com",
+                      databaseURL: "https://slack-lite.firebaseio.com",
+                    })
+
+                    export default {
+                      data () {
+                        db: firebaseApp.database(),
+                        auth: firebase.auth(),
+                        <mark>user: null</mark>
+                      },
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-firebase-setup-9">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                      ...
+                      &lt;/v-toolbar&gt;
+                      &lt;router-view&gt;&lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+                      apiKey: "AIzaSyD8Nl-dkVKGp3hyznikkh3jTRuOO2Bvh_k",
+                      authDomain: "slack-lite.firebaseapp.com",
+                      databaseURL: "https://slack-lite.firebaseio.com",
+                    })
+
+                    export default {
+                      data () {
+                        db: firebaseApp.database(),
+                        auth: firebase.auth(),
+                        user: null
+                      },
+                      <mark>mounted() {
+                        this.auth.onAuthStateChanged((user) =%gt; {
+                          this.user = user
+                        })
+                      }</mark>
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+        <section id="chat-firebase-setup-10">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;!-- src/App.vue --&gt;
+                  &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-toolbar color="purple darken-4" dark&gt;
+                      ...
+                      &lt;/v-toolbar&gt;
+                      &lt;router-view <mark>v-bind="{ db, auth, user }"</mark>&gt;
+                      &lt;/router-view&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    import firebase from 'firebase'
+
+                    const firebaseApp = firebase.initializeApp({
+                      apiKey: "AIzaSyD8Nl-dkVKGp3hyznikkh3jTRuOO2Bvh_k",
+                      authDomain: "slack-lite.firebaseapp.com",
+                      databaseURL: "https://slack-lite.firebaseio.com",
+                    })
+
+                    export default {
+                      data () {
+                        db: firebaseApp.database(),
+                        auth: firebase.auth(),
+                        <mark>user: null</mark>
+                      },
+                      mounted() {
+                        this.auth.onAuthStateChanged((user) =%gt; {
+                          this.user = user
+                        })
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
             </div>
           </div>
         </section>
