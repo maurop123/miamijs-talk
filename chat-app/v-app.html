@@ -5,16 +5,6 @@
     <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
-
-    <style>
-      .application--light .list {
-        background: none;
-      }
-
-      .container.fill-height {
-        align-items: flex-end;
-      }
-    </style>
   </head>
   <body>
     <div id="app">
@@ -59,9 +49,33 @@
       </v-app>
     </div>
   </body>
+  <style>
+    .application--light .list {
+      background: none;
+    }
+
+    .container.fill-height {
+      align-items: flex-end;
+    }
+  </style>
   <script>
     new Vue({
-      el: '#app'
+      el: '#app',
+      data: {
+        message: '',
+        messageList: [],
+      },
+      methods: {
+        sendMessage() {
+          const now = new Date()
+          const messageObj = {
+            text: this.message,
+            timestamp: now.getTime()
+          }
+          this.messageList.push(messageObj)
+          this.message = ''
+        }
+      }
     })
   </script>
 </html>

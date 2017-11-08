@@ -125,128 +125,52 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section id="intro">
+        <section>
           <h2>Building a PWA<br>
-            with Vue and Firebase
+            with <span class="vue-green-text">Vue</span>
+            and <span class="firebase-yellow-text">Firebase</span>
           </h2>
           <aside class="notes">
-            - Today we're going to make... [SPACE]
+            - Start crowd out with some questions. Get them thinking about programming
+              - How many of you have heard of The Lean Startup? How many of you have read it? Some of you have some homework, lol.
+            - Today we're going to make a progressive web app.
+              - For those of you that don’t know. A progressive web app is a web app, with mobile capabilities, like:
+                - Push notifications
+                - Offline enabled
+                - Looks and feels like an app
+              - let's you write code once, and deploy everywhere for prototyping your app ideas. One that gives a great amount of power, and is using some of the most promising technology.
+            - ti
           </aside>
         </section>
-        <section id="pwa">
-          <h2>A Progressive Web App</h2>
-          <h6 class="fragment">is a web app</h6>
-          <h6 class="fragment">with mobile capabilities</h6>
-          <h6 class="fragment">like...</h6>
-          <aside class="notes">
-            A progressive web app
-            For those of you that don’t know, a progressive web app
-            is a web app
-            with mobile capabilities
-            like...
-          </aside>
-        </section>
-        <section id="pwa-2" data-transition="fade">
-          <div class="col2">
-            <div>
+        <section>
+          <h2>
+            A progressive web app...
+          </h2>
+          <ul>
+            <li class="fragment">is a web app with mobile capabilities, like:
               <ul>
                 <li class="fragment">Push notifications</li>
                 <li class="fragment">Offline enabled</li>
                 <li class="fragment">Looks and feels like an app</li>
               </ul>
-            </div>
-            <div>
-
-            </div>
-          </div>
-          <aside class="notes">
-            push notifications
-            - just like WhatsApp sends you a notification whenever someone messages you
-
-            offline enabled
-            - that means it still works even if your user is offline or has a spotty connect
-            - spotify does this by letting you still used the playlist you've downloaded
-            - or google drive or dropbox with files you made "offline-enabled"
-            - that just means they're downloaded to your device
-            - progressive web apps can do this too
-
-            looks and feel likes like an app
-            
-            [once vue tetris pwa vid starts]
-            - that means that your app sits on your user's home screen,
-            - and when opened, it has a loader just before it opens
-
-          </aside>
+            </li>
+            <span class="fragment">
+              <li class="fragment highlight-red">
+                let's you write code once, and deploy everywhere
+              </li>
+            </span>
+          </ul>
         </section>
-        <section id="pwa-3" data-transition="fade">
-        </section>
-        <section id="pwa-4">
-          <h1>you can write<br />your app once<br />for every device</h1>
-          <aside class="notes">
-            this has been the holy grail of web development since the first iPhone.
-            the cost associated with having to duplicate and app for android, iphone, and web-responsive is HUGE!
-            and those are the minimum viable platforms your app needs to be on.
-          </aside>
-        </section>
-        <section id="pwa-5"
-          data-background-image="https://media.giphy.com/media/xUA7aUvSJUJ1TjZ9UA/giphy.gif"
-          data-background-size="contain"
-          >
-          <h2>So why isn't everyone doing it?</h2>
-          <aside class="notes">
-            this has been the holy grail of web development since the first iPhone.
-            the cost associated with having to duplicate and app for android, iphone, and web-responsive is HUGE!
-            and those are the minimum viable platforms your app needs to be on.
-          </aside>
-        </section>
-        <section id="pwa-support">
-        </section>
-        <section id="pwa-backing">
-        </section>
-        <section id="disclaimer">
-        </section>
-        <section id="intro-2">
-          <h2>Building a PWA<br>
-            with <span class="fragment highlight-green" data-fragment-index="1">Vue</span> and Firebase
-          </h2>
-          <aside class="notes">
-            Now to talk about this way of rapid prototyping, we need to take a look at
-
-            Vue, and
-
-            Firebase. Let's start with
-
-            Vue, first
-          </aside>
-        </section>
-        <section id="vue-intro"
+        <section
           data-background-image="img/vue-progressive-framework.png"
           data-background-size="auto"
           data-background-color="white"
         >
-          <aside class="notes">
-            - Vue calls itself the "Progressive" Framework
-            - Don't worry what progressive means. We'll get into that in a moment.
-
-            - It is Approachable
-            - meaning that if you already know HTML, CSS, and Javascript, you're just gonna have a great time
-
-            - It is Versatile
-            - meaning that it can solve large range of problems due to its "Progressive" nature
-            - there's that word again! just hang on!
-
-            - And it is Performant
-            - meaning that it's already small and fast right out of the box.
-          </aside>
         </section>
-        <section id="vue-intro-2">
+        <section>
           <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/lG0Ys-2d4MA?start=308" frameborder="0" allowfullscreen></iframe>
-          <aside class="notes">
-            Now to explain what a "progressive framework" is...
-            I'm going to let the creator of Vue, Evan You, speak for himself.
-          </aside>
         </section>
-        <section id="hello-world">
+        <section data-transition="none">
           <pre class="font-sm">
             <code data-trim data-noescape>
               &lt;html&gt;
@@ -2423,122 +2347,18 @@
           data-background-size="contain"
         >
         </section>
-        <section id="vuetify"
+        <section
           data-background-image="img/vuetify.png"
           data-background-size="contain"
           data-background-color="white"
         >
         </section>
-        <section id="vuetify-button"
-          data-background-video="img/vuetify-button-docs.mp4"
-          data-background-video-muted
-          data-background-size="contain">
-        </section>
-        <section id="vue-cli" data-transition="fade">
-          <pre class="font-xxs">
-            <code data-trim data-noescape class="noMaxH">
-             foo@bar:code$ vue init vuetifyjs/pwa slack-lite
-            </code>
-            <code data-trim data-noescape class="fragment noMaxH">
-             ? Project name slack-lite
-              ? Project short name: fewer than 12 characters to not be truncated on homescreens (default: same as name) 
-              ? Project description A Vue.js project
-              ? Author mauro <maurop123@gmail.com>
-              ? Vue build standalone
-              ? Install vue-router? Yes
-              ? Use ESLint to lint your code? Yes
-              ? Pick an ESLint preset none
-              ? Setup unit tests with Karma + Mocha? Yes
-              ? Setup e2e tests with Nightwatch? Yes
-
-                 vue-cli · Generated "slack-lite".
-
-                 To get started:
-                 
-                   cd slack-lite
-                   npm install
-                   npm run dev
-                 
-                 Documentation can be found at https://vuejs-templates.github.io/webpack
-            </code>
-          </pre>
-        </section>
-        <section id="vue-cli-2" data-transition="fade">
-          <pre class="font-xxs">
-            <code data-trim data-noescape class="noMaxH">
-             foo@bar:code$ cd slack-lite
-              foo@bar:code$ npm install
-            </code>
-            <code data-trim data-noescape class="fragment noMaxH">
-             > phantomjs-prebuilt@2.1.16 install /home/mauro/code/sandbox/ca/node_modules/phantomjs-prebuilt
-              > node install.js
-
-              PhantomJS not found on PATH
-              Downloading https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2
-              Saving to /tmp/phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2
-              Receiving...
-                [========================================] 99%
-              Received 22866K total.
-              Extracting tar contents (via spawned process)
-              Removing /home/mauro/code/sandbox/ca/node_modules/phantomjs-prebuilt/lib/phantom
-              Copying extracted folder /tmp/phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2-extract-1510088902609/phantomjs-2.1.1-linux-x86_64 -> /home/mauro/code/sandbox/ca/node_modules/phantomjs-prebuilt/lib/phantom
-              Writing location.js file
-              Done. Phantomjs binary available at /home/mauro/code/sandbox/ca/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs
-
-              > chromedriver@2.33.2 install /home/mauro/code/sandbox/ca/node_modules/chromedriver
-              > node install.js
-
-              Downloading https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
-              Saving to /tmp/chromedriver/chromedriver_linux64.zip
-              Received 781K...
-              Received 1568K...
-              Received 2352K...
-              Received 3136K...
-              Received 3920K...
-              Received 3995K total.
-              Extracting zip contents
-              Copying to target path /home/mauro/code/sandbox/ca/node_modules/chromedriver/lib/chromedriver
-              Fixing file permissions
-              Done. ChromeDriver binary available at /home/mauro/code/sandbox/ca/node_modules/chromedriver/lib/chromedriver/chromedriver
-              npm notice created a lockfile as package-lock.json. You should commit this file.
-              npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.2 (node_modules/fsevents):
-              npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
-
-              added 1410 packages in 52.481s
-            </code>
-          </pre>
-        </section>
-        <section id="vue-cli-3" data-transition="fade">
-          <pre class="font-xxs">
-            <code data-trim data-noescape class="noMaxH">
-             foo@bar:code$ npm run dev
-            </code>
-            <code data-trim data-noescape class="fragment noMaxH">
-             &gt; ca@1.0.0 dev /home/mauro/code/sandbox/slack-lite
-              &gt; node build/dev-server.js
-
-              &gt; Starting dev server...
-            </code>
-          </pre>
-        </section>
-        <section id="vue-cli-4" data-transition="fade">
-          <pre class="font-xxs">
-            <code data-trim data-noescape class="noMaxH">
-             <span class="vue-green-text">&gt; DONE  Compiled successfully in 6539ms</span>
-
-              &gt; Listening at http://localhost:8080
-            </code>
-          </pre>
-        </section>
-        <section data-background-video="img/vuetify-pwa-vue-cli.mp4"
-          data-background-video-muted
-          data-background-size="contain">
-        </section>
-        <section
-          data-background-image="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif"
-          data-background-size="contain"
-        >
-        </section>
+        <!-- </section> -->
+        <!-- <section -->
+        <!--   data&#45;background&#45;image="https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif" -->
+        <!--   data&#45;background&#45;size="contain" -->
+        <!-- > -->
+        <!-- </section> -->
         <section id="make-chat-app">
           <div class="col2">
             <div>
@@ -2578,8 +2398,9 @@
               </pre>
             </div>
             <div>
-              <div class="sample" style="height:100%;">
-                <iframe src="chat-app/v-app.html"></iframe>
+              <div class="sample" style="height:570px;">
+                <!-- <iframe src="chat&#45;app/v&#45;app.html" height="450"></iframe> -->
+                <iframe src="chat-app/dist/index.html" height="450" scrolling="no"></iframe>
               </div>
             </div>
           </div>
@@ -2639,8 +2460,6 @@
         // - https://github.com/hakimel/reveal.js#dependencies
         Reveal.initialize({
           history: true,
-          transition: 'none',
-          transitionSpeed: 'fast',
           dependencies: [
             { src: 'plugin/markdown/marked.js' },
             { src: 'plugin/markdown/markdown.js' },
