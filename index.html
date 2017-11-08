@@ -54,13 +54,16 @@
       .reveal span.font-sm {
         font-size: .42em;
       }
-      .reveal pre.font-smish {
+      .reveal pre.font-smish,
+      .reveal span.font-smish {
         font-size: .38em;
       }
-      .reveal pre.font-xs {
+      .reveal pre.font-xs,
+      .reveal span.font-xs {
         font-size: .33em;
       }
-      .reveal pre.font-xxs {
+      .reveal pre.font-xxs,
+      .reveal span.font-xxs {
         font-size: .28em;
       }
       mark {
@@ -98,10 +101,10 @@
         padding: 0 16px;
       }
       .mt0 {
-        margin-top: 0;
+        margin-top: 0 !important;
       }
       .mb0 {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
       }
       .vertCenter {
         position: absolute;
@@ -2539,47 +2542,407 @@
           data-background-size="contain"
         >
         </section>
-        <section id="make-chat-app">
+        <section id="chat-app">
           <div class="col2">
             <div>
-              <span>index.html</span>
-              <pre class="font-xs">
+              <span class="font-sm">App.vue</span>
+              <pre class="font-xxs mt0 mb0">
                 <code data-trim data-noescape class="noMaxH">
-                 &lt;html&gt;
-                    &lt;body&gt;
-                      &lt;div id="app"&gt;&lt;/div&gt;
-                    &lt;/body&gt;
+                 &lt;template&gt;
+                    &lt;v-app&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
 
-                    &lt;script src="https://unpkg.com/vue"&gt;
-                    &lt;/script&gt;
-                    &lt;script&gt;
-                      import OurButton from 'our-button.vue'
-
-                      new Vue({
-                         el: '#app',
-                         data: {
-                           color: 'red'
-                         },
-                         components: {
-                           'our-button': OurButton
-                         },
-                         template: `
-                           &lt;div&gt;
-                             &lt;h3&gt;Oh so {{ color }}...&lt;/h3&gt;
-                             &lt;our-button v-bind:color="color"&gt;
-                               Click me
-                             &lt;/our-button&gt;
-                           &lt;/div&gt;
-                         `
-                      })
-                    &lt;/script&gt;
-                  &lt;/html&gt;
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
                 </code>
               </pre>
             </div>
             <div>
               <div class="sample" style="height:100%;">
-                <iframe src="chat-app/v-app.html"></iframe>
+                <iframe src="slack-lite/vapp/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-2">
+          <div class="col2">
+            <div>
+              <span class="font-sm">App.vue</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-text-field
+                        name="input-1"
+                        label="Label Text"
+                        id="testing"
+                      &gt;&lt;/v-text-field&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/text-field/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-3">
+          <div class="col2">
+            <div>
+              <span class="font-sm">App.vue</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-container&gt;
+                        &lt;v-layout&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-text-field
+                              label="Message"
+                              v-model="message"
+                            &gt;&lt;/v-text-field&gt;
+                          &lt;/v-flex&gt;
+                        &lt;/v-layout&gt;
+                      &lt;/v-container&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: ''
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/vmodel/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-4">
+          <div class="col2">
+            <div>
+              <span class="font-sm">App.vue</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-container&gt;
+                        &lt;v-layout&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-text-field
+                              label="Message"
+                              v-model="message"
+                            &gt;&lt;/v-text-field&gt;
+                          &lt;/v-flex&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-btn flat icon color="pink"&gt;
+                              &lt;v-icon&gt;favorite&lt;/v-icon&gt;
+                            &lt;/v-btn&gt;
+                          &lt;/v-flex&gt;
+                        &lt;/v-layout&gt;
+                      &lt;/v-container&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: ''
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/vbtn/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-5">
+          <div class="col2">
+            <div>
+              <span class="font-sm">App.vue</span>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-container&gt;
+                        &lt;v-layout&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-text-field
+                              label="Message"
+                              v-model="message"
+                            &gt;&lt;/v-text-field&gt;
+                          &lt;/v-flex&gt;
+                          &lt;v-flex xs1&gt;
+                            &lt;v-btn flat icon color="blue"
+                              v-on:click="sendMessage"&gt;
+                            &lt;/v-btn&gt;
+                          &lt;/v-flex&gt;
+                        &lt;/v-layout&gt;
+                      &lt;/v-container&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: '',
+                          messageList: []
+                        }
+                      },
+                      methods: {
+                        sendMessage: function() {
+                          this.messageList.push(this.message)
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/send-msg/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-6">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-container&gt;
+                        &lt;v-layout column&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-list&gt;
+                              &lt;template v-for="msg in messageList"&gt;
+                                &lt;v-list-tile&gt;
+                                  {{ msg }}
+                                &lt;/v-list-tile&gt;
+                              &lt;/template&gt;
+                            &lt;/v-list&gt;
+                          &lt;/v-flex&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-layout&gt;
+                              &lt;v-flex&gt;
+                                &lt;v-text-field
+                                  label="Message"
+                                  v-model="message"
+                                &gt;&lt;/v-text-field&gt;
+                              &lt;/v-flex&gt;
+                              &lt;v-flex xs1&gt;
+                                &lt;v-btn flat icon color="blue"
+                                  v-on:click="sendMessage"&gt;
+                                &lt;/v-btn&gt;
+                              &lt;/v-flex&gt;
+                            &lt;/v-layout&gt;
+                          &lt;/v-flex&gt;
+                        &lt;/v-layout&gt;
+                      &lt;/v-container&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: '',
+                          messageList: []
+                        }
+                      },
+                      methods: {
+                        sendMessage: function() {
+                          this.messageList.push(this.message)
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/vlist/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-7">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-container&gt;
+                        &lt;v-layout column&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-list&gt;
+                              &lt;template v-for="msg in messageList"&gt;
+                                &lt;v-list-tile&gt;
+                                  {{ msg }}
+                                &lt;/v-list-tile&gt;
+                              &lt;/template&gt;
+                            &lt;/v-list&gt;
+                          &lt;/v-flex&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-layout&gt;
+                              &lt;v-flex&gt;
+                                &lt;v-text-field
+                                  label="Message"
+                                  v-model="message"
+                                &gt;&lt;/v-text-field&gt;
+                              &lt;/v-flex&gt;
+                              &lt;v-flex xs1&gt;
+                                &lt;v-btn flat icon color="blue"
+                                  v-on:click="sendMessage"&gt;
+                                &lt;/v-btn&gt;
+                              &lt;/v-flex&gt;
+                            &lt;/v-layout&gt;
+                          &lt;/v-flex&gt;
+                        &lt;/v-layout&gt;
+                      &lt;/v-container&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: '',
+                          messageList: []
+                        }
+                      },
+                      methods: {
+                        sendMessage: function() {
+                          this.messageList.push(this.message)
+                          this.message = ''
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+
+                  &lt;style&gt;
+                   .application--light .list {
+                     background: none;
+                   }
+                  &lt;/style&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/clean-bugs/dist/index.html" height=450 scrolling="no"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="chat-app-8">
+          <div class="col2">
+            <div>
+              <pre class="font-xxs mt0 mb0">
+                <code data-trim data-noescape class="noMaxH">
+                 &lt;template&gt;
+                    &lt;v-app&gt;
+                      &lt;v-container fill-height&gt;
+                        &lt;v-layout column&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-list&gt;
+                              &lt;template v-for="msg in messageList"&gt;
+                                &lt;v-list-tile&gt;
+                                  {{ msg }}
+                                &lt;/v-list-tile&gt;
+                              &lt;/template&gt;
+                            &lt;/v-list&gt;
+                          &lt;/v-flex&gt;
+                          &lt;v-flex&gt;
+                            &lt;v-layout&gt;
+                              &lt;v-flex&gt;
+                                &lt;v-text-field
+                                  label="Message"
+                                  v-model="message"
+                                &gt;&lt;/v-text-field&gt;
+                              &lt;/v-flex&gt;
+                              &lt;v-flex xs1&gt;
+                                &lt;v-btn flat icon color="blue"
+                                  v-on:click="sendMessage"&gt;
+                                &lt;/v-btn&gt;
+                              &lt;/v-flex&gt;
+                            &lt;/v-layout&gt;
+                          &lt;/v-flex&gt;
+                        &lt;/v-layout&gt;
+                      &lt;/v-container&gt;
+                    &lt;/v-app&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt;
+                    export default {
+                      data () {
+                        return {
+                          message: '',
+                          messageList: []
+                        }
+                      },
+                      methods: {
+                        sendMessage: function() {
+                          this.messageList.push(this.message)
+                          this.message = ''
+                        }
+                      }
+                    }
+                  &lt;/script&gt;
+
+                  &lt;style&gt;
+                   .application--light .list {
+                     background: none;
+                   }
+                   .container.fill-height {
+                     align-items: flex-end;
+                   }
+                  &lt;/style&gt;
+                </code>
+              </pre>
+            </div>
+            <div>
+              <div class="sample" style="height:100%;">
+                <iframe src="slack-lite/clean-bugs-2/dist/index.html" height=450 scrolling="no"></iframe>
               </div>
             </div>
           </div>
